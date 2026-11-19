@@ -1,0 +1,11 @@
+リンク設定一覧
+
+ホームページ（WANDERLUST/index.html）
+  Aプロフィール: profile/index.html
+  神椿市紹介: kamitsubaki/index.html
+
+プロフィール（WANDERLUST/profile/index.html）
+  ホームへ戻る: ../index.html
+
+神椿市（WANDERLUST/kamitsubaki/index.html）
+  ページ内の相対リンクをそのまま維持してください。

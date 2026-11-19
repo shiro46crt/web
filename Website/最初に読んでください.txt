@@ -1,0 +1,90 @@
+WANDERLUST ホームページ共有用セット
+=====================================
+
+このフォルダーには、ホームページ本体・各ページのHTML/CSS・必要な画像が入っています。
+友人に渡す場合は、このZIPファイルをそのまま送ってください。
+
+■ 1. フォルダー構成
+
+WANDERLUST/
+├─ index.html                 ホームページ
+├─ css/
+│  └─ style.css               ホームページのデザイン
+├─ images/
+│  └─ profile.jpg             ホームページ用画像
+├─ profile/
+│  ├─ index.html              黒薔薇青葉のプロフィールページ
+│  └─ images/
+│     └─ founder-profile.png  プロフィールの完成画像
+└─ kamitsubaki/
+   ├─ index.html              神椿市紹介ページ
+   └─ images/
+      ├─ city-main.png        神椿市メイン画像
+      ├─ area-0.png
+      ├─ area-1.png
+      ├─ area-2.png
+      ├─ area-3.png
+      ├─ area-4.png
+      ├─ area-5.png
+      └─ area-6.png           各エリアの画像
+
+参考資料/
+└─ 神椿市_元画像と元HTML.zip   元の神椿市素材一式
+
+■ 2. ページ同士のリンク
+
+ホームページ → メンバーA
+  index.html のリンク先：profile/index.html
+
+ホームページ → 神椿市紹介
+  index.html のリンク先：kamitsubaki/index.html
+
+プロフィール → ホーム
+  profile/index.html のリンク先：../index.html
+
+神椿市 → ホーム／プロフィール
+  神椿市ページ内のリンクは、各HTMLに記載された相対パスを使用します。
+
+■ 3. 友人に渡した後の開き方
+
+1) ZIPを右クリックして「すべて展開」を選ぶ
+2) 展開されたフォルダーの中の WANDERLUST フォルダーを開く
+3) index.html をダブルクリックする
+4) ホームページがブラウザーで開く
+5) MEMBERS の A を押すとプロフィール、RECOMMENDED DESTINATION を押すと神椿市ページへ移動する
+
+■ 4. 編集するときに開くファイル
+
+ホームページの文章・リンク：
+  WANDERLUST/index.html
+
+ホームページの色・配置・文字サイズ：
+  WANDERLUST/css/style.css
+
+黒薔薇青葉のプロフィール：
+  WANDERLUST/profile/index.html
+  ※現在のプロフィールは完成見本画像をそのまま表示する仕様です。
+    画像を差し替える場合は profile/images/founder-profile.png を置き換えます。
+
+神椿市の文章・ページ構成：
+  WANDERLUST/kamitsubaki/index.html
+
+神椿市の画像：
+  WANDERLUST/kamitsubaki/images/
+
+■ 5. 友人に送るときの注意
+
+・ZIPを展開してから使ってください。ZIPの中のHTMLだけを取り出すと画像やCSSが見つからなくなります。
+・フォルダー名や画像ファイル名を変更するとリンク切れになることがあります。
+・Google Fontsを読み込む箇所があるため、インターネット接続時は指定フォントが表示されます。
+・まずは WANDERLUST/index.html を開いて動作を確認してください。
+
+■ 6. 主要なコードファイル
+
+index.html             ホームページのHTML
+css/style.css          ホームページのCSS
+profile/index.html     プロフィールページのHTML
+kamitsubaki/index.html 神椿市ページのHTML
+
+HTMLはページの内容とリンク、CSSは見た目を指定します。
+画像は各ページの images フォルダーに保存しています。

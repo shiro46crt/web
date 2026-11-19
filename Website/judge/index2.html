@@ -1,0 +1,603 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ANIME MATCH | あなたにぴったりのアニメ</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f8f5ef;
+  color: #51483f;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+header {
+  padding: 25px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e9e1d7;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 23px;
+  letter-spacing: 3px;
+}
+
+.header-text {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #a69a8d;
+}
+
+.hero {
+  text-align: center;
+  padding: 90px 20px 55px;
+}
+
+.tag {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #b68f89;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(38px, 7vw, 65px);
+  font-weight: 500;
+  line-height: 1.25;
+  margin: 25px 0 15px;
+}
+
+h1 span {
+  color: #c18e89;
+  font-style: italic;
+}
+
+.description {
+  font-size: 13px;
+  line-height: 2.2;
+  color: #978b80;
+}
+
+.container {
+  max-width: 650px;
+  margin: 0 auto 100px;
+  padding: 0 22px;
+}
+
+.form-card {
+  background: #fffdfa;
+  padding: 45px;
+  border-radius: 5px;
+  box-shadow: 0 12px 40px #69513a0c;
+}
+
+.question {
+  margin-bottom: 32px;
+}
+
+.question label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.question small {
+  display: block;
+  font-size: 10px;
+  color: #ad9f92;
+  margin-top: 5px;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #e8ded4;
+  background: #faf8f4;
+  color: #51483f;
+  font-family: inherit;
+  font-size: 13px;
+  outline: none;
+  border-radius: 3px;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #c18e89;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+button {
+  width: 100%;
+  border: none;
+  padding: 18px;
+  background: #b98f89;
+  color: white;
+  font-family: inherit;
+  font-size: 12px;
+  letter-spacing: 3px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+button:hover {
+  background: #98716d;
+}
+
+.result {
+  display: none;
+  margin-top: 35px;
+  padding: 30px;
+  background: #f4ede5;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.result h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.result p {
+  font-size: 13px;
+  line-height: 2;
+}
+
+.result .anime-name {
+  font-size: 22px;
+  color: #a87570;
+  font-weight: 600;
+}
+
+footer {
+  text-align: center;
+  padding: 35px;
+  font-family: 'Playfair Display', serif;
+  font-size: 12px;
+  color: #aa9c8e;
+  letter-spacing: 2px;
+  border-top: 1px solid #e9e1d7;
+}
+
+@media(max-width: 600px) {
+  .form-card {
+    padding: 27px 20px;
+  }
+  .hero {
+    padding-top: 65px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">ANIME MATCH.</div>
+  <div class="header-text">FIND YOUR STORY</div>
+</header>
+
+<section class="hero">
+  <div class="tag">✳ YOUR NEXT FAVORITE ANIME</div>
+
+  <h1>Find your<br><span>Anime.</span></h1>
+
+  <p class="description">
+    今のあなたにぴったりの物語を。<br>
+    いくつかの質問に答えて、お気に入りの作品を見つけよう。
+  </p>
+</section>
+
+<main class="container">
+
+<div class="form-card">
+
+  <div class="question">
+    <label>01. どんな気分でアニメを見たい？</label>
+    <select id="mood">
+      <option value="感動">感動して泣きたい</option>
+      <option value="恋愛">キュンキュンしたい</option>
+      <option value="冒険">ワクワク・冒険したい</option>
+      <option value="癒し">癒されたい</option>
+      <option value="刺激">ハラハラしたい</option>
+      <option value="笑い">思いっきり笑いたい</option>
+    </select>
+  </div>
+
+  <div class="question">
+    <label>02. 好きなジャンルは？</label>
+    <select id="genre">
+      <option value="恋愛">恋愛・青春</option>
+      <option value="ファンタジー">ファンタジー</option>
+      <option value="バトル">バトル・アクション</option>
+      <option value="日常">日常・ほのぼの</option>
+      <option value="ミステリー">ミステリー・サスペンス</option>
+      <option value="なんでも">なんでもOK！</option>
+    </select>
+  </div>
+
+  <div class="question">
+    <label>03. 好きなアニメや作品は？</label>
+    <input id="favorite" placeholder="例：君に届け、ハイキュー!!">
+    <small>好きな作品から好みを考えてみよう。</small>
+  </div>
+
+  <div class="question">
+    <label>04. どんな作品が見たい？</label>
+    <textarea id="detail"
+      placeholder="例：作画がきれいな作品、短めの作品、主人公が成長する物語など"></textarea>
+  </div>
+
+  <button onclick="diagnose()">DISCOVER MY ANIME　✳</button>
+
+  <div class="result" id="result">
+    <div class="tag">✳ YOUR ANIME MATCH</div>
+    <h2>あなたにおすすめの作品</h2>
+    <div id="resultContent"></div>
+    <button onclick="diagnose()" style="margin-top:20px">
+      もう一度診断する
+    </button>
+  </div>
+
+</div>
+</main>
+
+<footer>
+  ANIME MATCH. — FIND YOUR STORY
+</footer>
+
+<script>
+
+const animeList = [
+
+  // ===== 恋愛・青春 =====
+  {
+    name: "君に届け",
+    genre: "恋愛",
+    mood: "恋愛",
+    description: "不器用な主人公が友情や恋を通して成長していく青春ストーリー。",
+    point: "ピュアな恋愛と優しい世界観が魅力。"
+  },
+  {
+    name: "ホリミヤ",
+    genre: "恋愛",
+    mood: "恋愛",
+    description: "学校では見せない一面を持つ二人が出会い、距離を縮めていく物語。",
+    point: "自然体な恋愛と個性豊かなキャラクターが魅力。"
+  },
+  {
+    name: "かぐや様は告らせたい",
+    genre: "恋愛",
+    mood: "笑い",
+    description: "恋愛に不器用な二人が繰り広げる、恋愛頭脳戦。",
+    point: "恋愛とコメディの絶妙なバランスが魅力。"
+  },
+  {
+    name: "青春ブタ野郎シリーズ",
+    genre: "恋愛",
+    mood: "感動",
+    description: "思春期の不思議な現象を通して、人間関係や心の葛藤を描く物語。",
+    point: "青春、恋愛、感動を楽しみたい人におすすめ。"
+  },
+  {
+    name: "五等分の花嫁",
+    genre: "恋愛",
+    mood: "恋愛",
+    description: "五つ子の姉妹と家庭教師の主人公が織りなすラブコメディ。",
+    point: "個性的なヒロインたちとの恋愛模様が魅力。"
+  },
+  {
+    name: "その着せ替え人形は恋をする",
+    genre: "恋愛",
+    mood: "恋愛",
+    description: "雛人形作りが好きな少年とコスプレ好きな少女の交流を描く物語。",
+    point: "趣味を通じて深まる関係と美しい作画が魅力。"
+  },
+
+  // ===== ファンタジー =====
+  {
+    name: "ヴァイオレット・エヴァーガーデン",
+    genre: "ファンタジー",
+    mood: "感動",
+    description: "手紙を通して人の想いを知っていく、美しく切ない物語。",
+    point: "圧倒的な映像美と心に響くストーリーが魅力。"
+  },
+  {
+    name: "葬送のフリーレン",
+    genre: "ファンタジー",
+    mood: "癒し",
+    description: "魔王討伐後、エルフの魔法使いが人間を知るための旅に出る物語。",
+    point: "美しい世界観と穏やかな時間、心に残るドラマが魅力。"
+  },
+  {
+    name: "Re:ゼロから始める異世界生活",
+    genre: "ファンタジー",
+    mood: "刺激",
+    description: "異世界に召喚された少年が、死に戻りの能力で運命に立ち向かう。",
+    point: "予測できない展開と緊張感が魅力。"
+  },
+  {
+    name: "転生したらスライムだった件",
+    genre: "ファンタジー",
+    mood: "冒険",
+    description: "スライムに転生した主人公が仲間を増やし、国を築いていく物語。",
+    point: "冒険、仲間との絆、国づくりが魅力。"
+  },
+  {
+    name: "無職転生",
+    genre: "ファンタジー",
+    mood: "冒険",
+    description: "異世界に転生した主人公が新たな人生を歩んでいく物語。",
+    point: "壮大な世界観と主人公の成長が魅力。"
+  },
+  {
+    name: "魔女の旅々",
+    genre: "ファンタジー",
+    mood: "癒し",
+    description: "魔女のイレイナがさまざまな国を巡り、人々と出会う旅の物語。",
+    point: "美しい風景と多彩なエピソードが魅力。"
+
+  },
+
+  // ===== バトル・アクション =====
+  {
+    name: "僕のヒーローアカデミア",
+    genre: "バトル",
+    mood: "冒険",
+    description: "個性と呼ばれる能力を持つ世界で、ヒーローを目指す少年の物語。",
+    point: "仲間との絆と熱い成長ドラマが魅力。"
+  },
+  {
+    name: "鬼滅の刃",
+    genre: "バトル",
+    mood: "感動",
+    description: "鬼に家族を奪われた少年が、妹を人間に戻すため鬼と戦う物語。",
+    point: "迫力ある戦闘シーンと家族愛が魅力。"
+  },
+  {
+    name: "呪術廻戦",
+    genre: "バトル",
+    mood: "刺激",
+    description: "呪いが存在する世界で、呪術師たちが戦いに身を投じる物語。",
+    point: "迫力あるアクションと個性的なキャラクターが魅力。"
+  },
+  {
+    name: "進撃の巨人",
+    genre: "バトル",
+    mood: "刺激",
+    description: "巨人に支配された世界で、人類が自由を求めて戦う物語。",
+    point: "壮大な伏線と衝撃的な展開が魅力。"
+  },
+  {
+    name: "鋼の錬金術師 FULLMETAL ALCHEMIST",
+    genre: "バトル",
+    mood: "冒険",
+    description: "失った身体を取り戻すため、兄弟が賢者の石を探す旅に出る。",
+    point: "緻密なストーリーと兄弟の絆が魅力。"
+  },
+  {
+    name: "チェンソーマン",
+    genre: "バトル",
+    mood: "刺激",
+    description: "悪魔が存在する世界で、少年デンジが壮絶な戦いに巻き込まれる。",
+    point: "独特な世界観と予測不能な展開が魅力。"
+  },
+
+  // ===== 日常・癒し =====
+  {
+    name: "夏目友人帳",
+    genre: "日常",
+    mood: "癒し",
+    description: "妖怪たちとの出会いを通して、人とのつながりを描く優しい物語。",
+    point: "ゆったりした時間と心温まるエピソードが魅力。"
+  },
+  {
+    name: "ゆるキャン△",
+    genre: "日常",
+    mood: "癒し",
+    description: "女子高生たちがキャンプを楽しむ、のんびりとした日常物語。",
+    point: "美しい自然と穏やかな雰囲気が魅力。"
+  },
+  {
+    name: "ぼっち・ざ・ろっく！",
+    genre: "日常",
+    mood: "笑い",
+    description: "人見知りの少女がバンド活動を通じて成長していく物語。",
+    point: "音楽と個性的なキャラクター、コメディが魅力。"
+  },
+  {
+    name: "日常",
+    genre: "日常",
+    mood: "笑い",
+    description: "女子高生たちを中心に、何気ない日常が不思議な展開を見せる作品。",
+    point: "予想外のギャグと独特なテンポが魅力。"
+  },
+  {
+    name: "SPY×FAMILY",
+    genre: "日常",
+    mood: "笑い",
+    description: "秘密を抱えた家族が繰り広げる、笑いと感動の物語。",
+    point: "個性的なキャラクターと楽しい掛け合いが魅力。"
+  },
+
+  // ===== ミステリー・サスペンス =====
+  {
+    name: "DEATH NOTE",
+    genre: "ミステリー",
+    mood: "刺激",
+    description: "名前を書かれた人間が死ぬノートを巡る天才たちの頭脳戦。",
+    point: "緻密な心理戦と予測できない展開が魅力。"
+  },
+  {
+    name: "STEINS;GATE",
+    genre: "ミステリー",
+    mood: "感動",
+    description: "偶然タイムマシンを生み出した研究者たちが運命に立ち向かう。",
+    point: "巧妙な伏線と後半の怒涛の展開が魅力。"
+  },
+  {
+    name: "約束のネバーランド",
+    genre: "ミステリー",
+    mood: "刺激",
+    description: "幸せな孤児院に隠された秘密を知った子供たちの脱出劇。",
+    point: "緊張感のある頭脳戦と謎解きが魅力。"
+  },
+  {
+    name: "氷菓",
+    genre: "ミステリー",
+    mood: "癒し",
+    description: "省エネ主義の高校生が日常に潜む謎を解き明かしていく。",
+    point: "繊細な心理描写と美しい映像が魅力。"
+  },
+
+  // ===== スポーツ =====
+  {
+    name: "ハイキュー!!",
+    genre: "バトル",
+    mood: "冒険",
+    description: "仲間とともに夢に向かって挑戦する高校バレーボールの物語。",
+    point: "熱い試合とキャラクターの成長が魅力。"
+  },
+  {
+    name: "ブルーロック",
+    genre: "バトル",
+    mood: "刺激",
+    description: "世界一のストライカーを目指す選手たちの過酷な競争を描く。",
+    point: "個性豊かな選手たちの熱い駆け引きが魅力。"
+  },
+  {
+    name: "SLAM DUNK",
+    genre: "バトル",
+    mood: "冒険",
+    description: "バスケットボールを始めた少年が仲間とともに成長していく。",
+    point: "熱い試合と青春のドラマが魅力。"
+  },
+
+  // ===== SF・近未来 =====
+  {
+    name: "PSYCHO-PASS",
+    genre: "ミステリー",
+    mood: "刺激",
+    description: "人間の心理状態を数値化する未来社会で、犯罪を追う刑事たちの物語。",
+    point: "深いテーマと緊張感のある展開が魅力。"
+  },
+  {
+    name: "Dr.STONE",
+    genre: "ファンタジー",
+    mood: "冒険",
+    description: "石化した人類が目覚めた世界で、科学の力を使い文明を再建する。",
+    point: "科学の面白さと仲間との冒険が魅力。"
+  },
+
+  // ===== 音楽・芸術 =====
+  {
+    name: "四月は君の嘘",
+    genre: "恋愛",
+    mood: "感動",
+    description: "ピアノを弾けなくなった少年が、一人の少女との出会いで再び音楽と向き合う。",
+    point: "美しい音楽と切ない青春ストーリーが魅力。"
+  },
+  {
+    name: "響け！ユーフォニアム",
+    genre: "日常",
+    mood: "感動",
+    description: "吹奏楽部の少女たちが音楽と向き合いながら成長していく。",
+    point: "繊細な人間関係と本格的な音楽描写が魅力。"
+  },
+  {
+    name: "推しの子",
+    genre: "ミステリー",
+    mood: "刺激",
+    description: "芸能界を舞台に、華やかな世界の裏側と復讐を描く物語。",
+    point: "芸能界のリアルな描写と予測不能な展開が魅力。"
+  }
+
+];
+
+
+function diagnose() {
+  const mood = document.getElementById("mood").value;
+  const genre = document.getElementById("genre").value;
+  const favorite = document.getElementById("favorite").value;
+  const detail = document.getElementById("detail").value;
+
+  // 気分とジャンルの一致度を計算
+  let matches = animeList.map(anime => {
+    let score = 0;
+
+    if (anime.mood === mood) {
+      score += 2;
+    }
+
+    if (genre === "なんでも" || anime.genre === genre) {
+      score += 2;
+    }
+
+    return {
+      ...anime,
+      score: score
+    };
+  });
+
+  // 最もスコアの高い作品を抽出
+  const maxScore = Math.max(...matches.map(a => a.score));
+
+  matches = matches.filter(a => a.score === maxScore);
+
+  // 同点の作品からランダムに選択
+  const result = matches[
+    Math.floor(Math.random() * matches.length)
+  ];
+
+  document.getElementById("resultContent").innerHTML = `
+    <p class="anime-name">${escapeHTML(result.name)}</p>
+    <p>${escapeHTML(result.description)}</p>
+    <p>♡ ${escapeHTML(result.point)}</p>
+
+    <p style="color:#ad9187;font-size:11px">
+      YOUR MOOD : ${escapeHTML(mood)} / ${escapeHTML(genre)}
+    </p>
+
+    <p style="font-size:11px;color:#a69a8d">
+      ${favorite ? "好きな作品：" + escapeHTML(favorite) : ""}
+    </p>
+  `;
+
+  document.getElementById("result").style.display = "block";
+
+  document.getElementById("result").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+
+
+function escapeHTML(str) {
+  return str.replace(/[&<>"']/g, c => ({
+    "&":"&amp;",
+    "<":"&lt;",
+    ">":"&gt;",
+    '"':"&quot;",
+    "'":"&#39;"
+  })[c]);
+}
+</script>
+
+</body>
+</html>

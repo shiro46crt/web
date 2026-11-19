@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="ja"><head><script data-bard-client-injected="true">(function(firebaseConfig, initialAuthToken, appId) {
+        window.__firebase_config = firebaseConfig;
+        window.__initial_auth_token = initialAuthToken;
+        window.__app_id = appId;
+            })("\n{\n  \"apiKey\": \"AIzaSyCqyCcs2R2e7AegGjvFAwG98wlamtbHvZY\",\n  \"authDomain\": \"bard-frontend.firebaseapp.com\",\n  \"projectId\": \"bard-frontend\",\n  \"storageBucket\": \"bard-frontend.firebasestorage.app\",\n  \"messagingSenderId\": \"175205271074\",\n  \"appId\": \"1:175205271074:web:2b7bd4d34d33bf38e6ec7b\"\n}\n","","a3bd39b68c08-index.html-393")</script><script data-bard-client-injected="true">
+  document.addEventListener('input', (event) => {
+    if (event.target && (event.target.isContentEditable || event.target.hasAttribute('contenteditable'))) {
+      const clonedDoc = document.cloneNode(true);
+      const injectedScripts = clonedDoc.querySelectorAll('[data-bard-client-injected="true"]');
+      injectedScripts.forEach(el => el.remove());
+      window.parent.postMessage({
+        type: 'inlineEdit',
+        html: '<!DOCTYPE html>\n' + clonedDoc.documentElement.outerHTML
+      }, '*');
+    }
+  });
+</script><script data-bard-client-injected="true">(function(){'use strict';window.addEventListener("message",a=>{a.data&&a.data.type==="SUPPLEMENTAL_DATA_UPDATE"&&window.dispatchEvent(new CustomEvent("supplementaldataupdate",{detail:a.data.data}))});}).call(this);
+</script><script data-bard-client-injected="true">(function(){'use strict';var k=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,d){if(a==Array.prototype||a==Object.prototype)return a;a[b]=d.value;return a};function m(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var d=a[b];if(d&&d.Math==Math)return d}throw Error("Cannot find global object");}var q=m(this);
+function r(a,b){if(b)a:{var d=q;a=a.split(".");for(var c=0;c<a.length-1;c++){var e=a[c];if(!(e in d))break a;d=d[e]}a=a[a.length-1];c=d[a];b=b(c);b!=c&&b!=null&&k(d,a,{configurable:!0,writable:!0,value:b})}}function t(a){function b(c){return a.next(c)}function d(c){return a.throw(c)}return new Promise(function(c,e){function f(g){g.done?c(g.value):Promise.resolve(g.value).then(b,d).then(f,e)}f(a.next())})}function u(a){return t(a())}
+r("Object.values",function(a){return a?a:function(b){var d=[],c;for(c in b)Object.prototype.hasOwnProperty.call(b,c)&&d.push(b[c]);return d}});r("Array.prototype.includes",function(a){return a?a:function(b,d){var c=this;c instanceof String&&(c=String(c));var e=c.length;d=d||0;for(d<0&&(d=Math.max(d+e,0));d<e;d++){var f=c[d];if(f===b||Object.is(f,b))return!0}return!1}});/*
+
+ MIT License
+
+ Copyright (c) 2017-2023 W.Y.
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+
+*/
+function v(a,b){var d=a.style;b.backgroundColor&&(d.backgroundColor=b.backgroundColor);b.width&&(d.width=`${b.width}px`);b.height&&(d.height=`${b.height}px`);var c=b.style;c!=null&&Object.keys(c).forEach(e=>{d[e]=c[e]})};var aa=(()=>{var a=0;return()=>{a+=1;return`u${`0000${(Math.random()*1679616<<0).toString(36)}`.slice(-4)}${a}`}})();function w(a){var b=[];for(let d=0,c=a.length;d<c;d++)b.push(a[d]);return b}let y=null;function z(a={}){return y?y:a.u?y=a.u:y=w(window.getComputedStyle(document.documentElement))}function A(a,b){return(a=(a.ownerDocument.defaultView||window).getComputedStyle(a).getPropertyValue(b))?parseFloat(a.replace("px","")):0}
+function B(a,b={}){var d;if(!(d=b.width)){d=A(a,"border-left-width");var c=A(a,"border-right-width");d=a.clientWidth+d+c}(b=b.height)||(b=A(a,"border-top-width"),c=A(a,"border-bottom-width"),b=a.clientHeight+b+c);return{width:d,height:b}}function C(a){return new Promise((b,d)=>{var c=new Image;c.onload=()=>{c.decode().then(()=>{requestAnimationFrame(()=>b(c))})};c.onerror=d;c.crossOrigin="anonymous";c.decoding="async";c.src=a})}
+function ba(a){return u(function*(){return Promise.resolve().then(()=>(new XMLSerializer).serializeToString(a)).then(encodeURIComponent).then(b=>`data:image/svg+xml;charset=utf-8,${b}`)})}
+function ca(a,b,d){return u(function*(){var c=document.createElementNS("http://www.w3.org/2000/svg","svg"),e=document.createElementNS("http://www.w3.org/2000/svg","foreignObject");c.setAttribute("width",`${b}`);c.setAttribute("height",`${d}`);c.setAttribute("viewBox",`0 0 ${b} ${d}`);e.setAttribute("width","100%");e.setAttribute("height","100%");e.setAttribute("x","0");e.setAttribute("y","0");e.setAttribute("externalResourcesRequired","true");c.appendChild(e);e.appendChild(a);return ba(c)})}
+var D=(a,b)=>{if(a instanceof b)return!0;a=Object.getPrototypeOf(a);return a===null?!1:a.constructor.name===b.name||D(a,b)};function da(a,b){return z(b).map(d=>{var c=a.getPropertyValue(d),e=a.getPropertyPriority(d);return`${d}: ${c}${e?" !important":""};`}).join(" ")}
+function E(a,b,d,c){a=window.getComputedStyle(a,d);var e=a.getPropertyValue("content");if(e!==""&&e!=="none"){var f=aa();try{b.className=`${b.className} ${f}`}catch(h){return}e=document.createElement("style");var g=e.appendChild;d=`.${f}:${d}`;a.cssText?(c=a.getPropertyValue("content"),c=`${a.cssText} content: '${c.replace(/'|"/g,"")}';`):c=da(a,c);g.call(e,document.createTextNode(`${d}{${c}}`));b.appendChild(e)}};function F(a){return a.search(/^(data:)/)!==-1}function G(a,b,d){return u(function*(){var c=yield fetch(a,b);if(c.status===404)throw Error(`Resource "${c.url}" not found`);var e=yield c.blob();return new Promise((f,g)=>{var h=new FileReader;h.onerror=g;h.onloadend=()=>{try{f(d({v:c,result:h.result}))}catch(l){g(l)}};h.readAsDataURL(e)})})}const H={};function ea(a,b,d){var c=a.replace(/\?.*/,"");d&&(c=a);/ttf|otf|eot|woff2?/i.test(c)&&(c=c.replace(/.*\//,""));return b?`[${b}]${c}`:c}
+function I(a,b,d){return u(function*(){var c=ea(a,b,d.F);if(H[c]!=null)return H[c];d.B&&(a+=(/\?/.test(a)?"&":"?")+(new Date).getTime());try{let f=yield G(a,d.l,({v:g,result:h})=>{b||(b=g.headers.get("Content-Type")||"");return h.split(/,/)[1]});var e=`data:${b};base64,${f}`}catch(f){e=d.o||""}return H[c]=e})};const J={R:"application/font-woff",S:"application/font-woff",O:"application/font-truetype",C:"application/vnd.ms-fontobject",J:"image/png",H:"image/jpeg",G:"image/jpeg",D:"image/gif",N:"image/tiff",M:"image/svg+xml",P:"image/webp"};function K(a){return(a=/\.([^./]*?)$/g.exec(a))?a[1]:""};function fa(a){return u(function*(){var b=a.toDataURL();return b==="data:,"?a.cloneNode(!1):C(b)})}function ha(a,b){return u(function*(){if(a.currentSrc){var d=document.createElement("canvas");let c=d.getContext("2d");d.width=a.clientWidth;d.height=a.clientHeight;c==null||c.drawImage(a,0,0,d.width,d.height);d=d.toDataURL();return C(d)}d=a.poster;d=yield I(d,J[K(d).toLowerCase()]||"",b);return C(d)})}
+function ia(a,b){return u(function*(){try{let d;if(a==null?0:(d=a.contentDocument)==null?0:d.body)return yield L(a.contentDocument.body,b,!0)}catch(d){}return a.cloneNode(!1)})}function ja(a,b){return u(function*(){return D(a,HTMLCanvasElement)?fa(a):D(a,HTMLVideoElement)?ha(a,b):D(a,HTMLIFrameElement)?ia(a,b):a.cloneNode(a.tagName!=null&&a.tagName.toUpperCase()==="SVG")})}
+function ka(a,b,d){return u(function*(){if(b.tagName!=null&&b.tagName.toUpperCase()==="SVG")return b;var c=[];if(a.tagName!=null&&a.tagName.toUpperCase()==="SLOT"&&a.assignedNodes)c=w(a.assignedNodes());else{let e;if(D(a,HTMLIFrameElement)&&((e=a.contentDocument)==null?0:e.body))c=w(a.contentDocument.body.childNodes);else{let f;c=w(((f=a.shadowRoot)!=null?f:a).childNodes)}}if(c.length===0||D(a,HTMLVideoElement))return b;yield c.reduce((e,f)=>e.then(()=>L(f,d)).then(g=>{g&&b.appendChild(g)}),Promise.resolve());
+return b})}function la(a,b,d){var c=b.style;if(c){var e=window.getComputedStyle(a);e.cssText?(c.cssText=e.cssText,c.transformOrigin=e.transformOrigin):z(d).forEach(f=>{var g=e.getPropertyValue(f);f==="font-size"&&g.endsWith("px")&&(g=`${Math.floor(parseFloat(g.substring(0,g.length-2)))-.1}px`);D(a,HTMLIFrameElement)&&f==="display"&&g==="inline"&&(g="block");f==="d"&&b.getAttribute("d")&&(g=`path(${b.getAttribute("d")})`);c.setProperty(f,g,e.getPropertyPriority(f))})}}
+function ma(a,b){D(a,HTMLSelectElement)&&(b=Array.from(b.children).find(d=>a.value===d.getAttribute("value")))&&b.setAttribute("selected","")}
+function na(a,b){return u(function*(){var d=a.querySelectorAll?a.querySelectorAll("use"):[];if(d.length===0)return a;var c={};for(var e=0;e<d.length;e++){var f=d[e].getAttribute("xlink:href");if(f){let g=document.querySelector(f);a.querySelector(f)||!g||c[f]||(c[f]=yield L(g,b,!0))}}d=Object.values(c);if(d.length){c=document.createElementNS("http://www.w3.org/1999/xhtml","svg");c.setAttribute("xmlns","http://www.w3.org/1999/xhtml");c.style.position="absolute";c.style.width="0";c.style.height="0";
+c.style.overflow="hidden";c.style.display="none";e=document.createElementNS("http://www.w3.org/1999/xhtml","defs");c.appendChild(e);for(f=0;f<d.length;f++)e.appendChild(d[f]);a.appendChild(c)}return a})}
+function L(a,b,d){return u(function*(){return d||!b.filter||b.filter(a)?Promise.resolve(a).then(c=>ja(c,b)).then(c=>ka(a,c,b)).then(c=>{D(c,Element)&&(la(a,c,b),E(a,c,":before",b),E(a,c,":after",b),D(a,HTMLTextAreaElement)&&(c.textContent=a.value),D(a,HTMLInputElement)&&c.setAttribute("value",a.value),ma(a,c));return c}).then(c=>na(c,b)):null})};const M=/url\((['"]?)([^'"]+?)\1\)/g,oa=/url\([^)]+\)\s*format\((["']?)([^"']+)\1\)/g,pa=/src:\s*(?:url\([^)]+\)\s*format\([^)]+\)[,;]\s*)+/g;function qa(a){var b=[];a.replace(M,(d,c,e)=>{b.push(e);return d});return b.filter(d=>!F(d))}
+function ra(a,b,d,c){return u(function*(){try{let e=d?(new URL(b,d||void 0)).toString():b,f;f=yield I(e,J[K(b).toLowerCase()]||"",c);return a.replace(new RegExp(`(url\\(['"]?)(${b.replace(/([.*+?^${}()|\[\]\/\\])/g,"\\$1")})(['"]?\\))`,"g"),`$1${f}$3`)}catch(e){}return a})}function sa(a,{K:b}){return b?a.replace(pa,d=>{for(;;){let [c,,e]=oa.exec(d)||[];if(!e)return"";if(e===b)return`src: ${c};`}}):a}
+function N(a,b,d){return u(function*(){if(a.search(M)===-1)return a;var c=sa(a,d);return qa(c).reduce((e,f)=>e.then(g=>ra(g,f,b,d)),Promise.resolve(c))})};function O(a,b,d){return u(function*(){var c,e=(c=b.style)==null?void 0:c.getPropertyValue(a);return e?(c=yield N(e,null,d),b.style.setProperty(a,c,b.style.getPropertyPriority(a)),!0):!1})}function ta(a,b){return u(function*(){(yield O("background",a,b))||(yield O("background-image",a,b));(yield O("mask",a,b))||(yield O("-webkit-mask",a,b))||(yield O("mask-image",a,b))||(yield O("-webkit-mask-image",a,b))})}
+function ua(a,b){return u(function*(){var d=D(a,HTMLImageElement);if(d&&!F(a.src)||D(a,SVGImageElement)&&!F(a.href.baseVal)){var c=d?a.src:a.href.baseVal,e=yield I(c,J[K(c).toLowerCase()]||"",b);yield new Promise((f,g)=>{a.onload=f;a.onerror=b.h?(...h)=>{try{f(b.h(...h))}catch(l){g(l)}}:g;a.decode&&(a.decode=f);a.loading==="lazy"&&(a.loading="eager");d?(a.srcset="",a.src=e):a.href.baseVal=e})}})}
+function va(a,b){return u(function*(){var d=w(a.childNodes).map(c=>P(c,b));yield Promise.all(d).then(()=>a)})}function P(a,b){return u(function*(){D(a,Element)&&(yield ta(a,b),yield ua(a,b),yield va(a,b))})};const Q={};function R(a){return u(function*(){var b=Q[a];if(b!=null)return b;b=yield(yield fetch(a)).text();b={url:a,cssText:b};return Q[a]=b})}function S(a,b){return u(function*(){var d=a.cssText,c=/url\(["']?([^"')]+)["']?\)/g,e=(d.match(/url\([^)]+\)/g)||[]).map(f=>u(function*(){var g=f.replace(c,"$1");g.startsWith("https://")||(g=(new URL(g,a.url)).href);return G(g,b.l,({result:h})=>{d=d.replace(f,`url(${h})`);return[f,h]})}));return Promise.all(e).then(()=>d)})}
+function T(a){if(a==null)return[];var b=[];a=a.replace(/(\/\*[\s\S]*?\*\/)/gi,"");for(var d=RegExp("((@.*?keyframes [\\s\\S]*?){([\\s\\S]*?}\\s*?)})","gi");;){var c=d.exec(a);if(c===null)break;b.push(c[0])}a=a.replace(d,"");d=/@import[\s\S]*?url\([^)]*\)[\s\S]*?;/gi;for(c=RegExp("((\\s*?(?:\\/\\*[\\s\\S]*?\\*\\/)?\\s*?@media[\\s\\S]*?){([\\s\\S]*?)}\\s*?})|(([\\s\\S]*?){([\\s\\S]*?)})","gi");;){let e=d.exec(a);if(e===null)if(e=c.exec(a),e===null)break;else d.lastIndex=c.lastIndex;else c.lastIndex=
+d.lastIndex;b.push(e[0])}return b}
+function wa(a,b){return u(function*(){var d=[],c=[];a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach((f,g)=>{if(f.type===CSSRule.IMPORT_RULE){let h=g+1;f=R(f.href).then(l=>S(l,b)).then(l=>T(l).forEach(p=>{try{e.insertRule(p,p.startsWith("@import")?h+=1:e.cssRules.length)}catch(x){}})).catch(()=>{});c.push(f)}})}catch(f){let g=a.find(h=>h.href==null)||document.styleSheets[0];e.href!=null&&c.push(R(e.href).then(h=>S(h,b)).then(h=>T(h).forEach(l=>{g.insertRule(l,g.cssRules.length)})).catch(()=>
+{}))}});return Promise.all(c).then(()=>{a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach(f=>{d.push(f)})}catch(f){}});return d})})}function xa(a){return a.filter(b=>b.type===CSSRule.FONT_FACE_RULE).filter(b=>b.style.getPropertyValue("src").search(M)!==-1)}function ya(a,b){return u(function*(){if(a.ownerDocument==null)throw Error("Provided element is not within a Document");var d=yield wa(w(a.ownerDocument.styleSheets),b);return xa(d)})}
+function za(a){function b(c){(c.style.fontFamily||getComputedStyle(c).fontFamily).split(",").forEach(e=>{d.add(e.trim().replace(/["']/g,""))});Array.from(c.children).forEach(e=>{e instanceof HTMLElement&&b(e)})}var d=new Set;b(a);return d}function Aa(a,b){return u(function*(){var d=yield ya(a,b),c=za(a);return(yield Promise.all(d.filter(e=>c.has(e.style.fontFamily.trim().replace(/["']/g,""))).map(e=>N(e.cssText,e.parentStyleSheet?e.parentStyleSheet.href:null,b)))).join("\n")})}
+function Ba(a,b){return u(function*(){var d=b.m!=null?b.m:b.A?null:yield Aa(a,b);if(d){let c=document.createElement("style");c.appendChild(document.createTextNode(d));a.firstChild?a.insertBefore(c,a.firstChild):a.appendChild(c)}})};function Ca(a,b={}){return u(function*(){var {width:d,height:c}=B(a,b),e=yield L(a,b,!0);yield Ba(e,b);yield P(e,b);v(e,b);return yield ca(e,d,c)})}
+function Da(a,b={}){return u(function*(){var {width:d,height:c}=B(a,b),e=yield Ca(a,b);e=yield C(e);var f=document.createElement("canvas"),g=f.getContext("2d"),h=b.I||window.devicePixelRatio||1,l=b.j||d,p=b.i||c;f.width=l*h;f.height=p*h;!b.L&&(f.width>16384||f.height>16384)&&(f.width>16384&&f.height>16384?f.width>f.height?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=16384):f.width>16384?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=16384));
+f.style.width=`${l}`;f.style.height=`${p}`;b.backgroundColor&&(g.fillStyle=b.backgroundColor,g.fillRect(0,0,f.width,f.height));g.drawImage(e,0,0,f.width,f.height);return f})}function Ea(a,b={}){return u(function*(){return(yield Da(a,b)).toDataURL()})};const Fa=["gemini.google.com","corp.google.com","proxy.googlers.com"];function V(a){a=Number(a.replace(/px$/,""));return Number.isFinite(a)?a:0}function W(){return document.body.querySelectorAll('[class*="animate"]').length>0}function X(a,b){var d=document.createElement("canvas");d.width=a;d.height=b;return d.toDataURL("image/png")}const Y=X(1,1);
+function Z(a,b){return u(function*(){var d=Math.max(b?b.width:a.offsetWidth,1),c=Math.max(b?b.height:a.offsetHeight,1),e=HTMLCanvasElement.prototype.toDataURL;b&&(HTMLCanvasElement.prototype.toDataURL=function(f,g){var h;if(h=this.isConnected&&a.contains(this)){{let n=this.getBoundingClientRect();if(n.width===0||n.height===0)h=!1;else if(window.getComputedStyle(this).position==="fixed")h=n.bottom>0&&n.top<b.height&&n.right>0&&n.left<b.width;else{h=a.getBoundingClientRect();var l=n.top-h.top,p=n.left-
+h.left,x=n.right-h.left;h=n.bottom-h.top>b.scrollTop&&l<b.scrollTop+b.height&&x>b.scrollLeft&&p<b.scrollLeft+b.width}}h=!h}return h?"data:,":e.call(this,f,g)});try{let f=window.getComputedStyle(a),g=b?`${V(f.marginTop)-b.scrollTop}px`:void 0,h=b?`${V(f.marginLeft)-b.scrollLeft}px`:void 0,l=`${Math.max(a.offsetWidth,d)}px`,p,x=`${Math.max(a.offsetHeight,c+((p=b==null?void 0:b.scrollTop)!=null?p:0))}px`;return yield Ea(a,Object.assign({},{width:d,height:c,j:d,i:c},b?{style:{width:l,height:x,marginTop:g,
+marginLeft:h,marginBlockStart:g,marginInlineStart:h}}:{},{A:!0,filter:n=>{if(n.tagName==="IMG"){let U=n.getAttribute("src");if(!U||U.trim()===""||n.style.display==="none")return!1}return!0},o:Y,h:()=>Y}))}catch(f){return X(d,c)}finally{HTMLCanvasElement.prototype.toDataURL=e}})}
+function Ga(){return u(function*(){var a=document.body.offsetWidth,b=document.body.offsetHeight,d=document.body.cloneNode(!0);d.querySelectorAll('[class*="animate"]').forEach(c=>{c.classList.remove(...Array.from(c.classList).filter(e=>e.startsWith("animate")))});d.style.width=`${a}px`;d.style.height=`${b}px`;return d})}
+function Ha(a){return u(function*(){var b={width:window.innerWidth||document.documentElement.clientWidth||document.body.offsetWidth,height:window.innerHeight||document.documentElement.clientHeight||document.body.offsetHeight,scrollTop:window.scrollY||document.documentElement.scrollTop||document.body.scrollTop||0,scrollLeft:window.scrollX||document.documentElement.scrollLeft||document.body.scrollLeft||0},d=document.body;if(W()){let c=yield Ga();d=c;document.body.appendChild(c)}b=yield Z(d,b);W()&&
+document.body.removeChild(d);window.parent.postMessage({type:"SEND_SCREENSHOT",image:b,topOffset:0},a.origin)})}function Ia(a){return u(function*(){var b={type:"SEND_SCREENSHOT_FOR_DATA_VISUALIZATION",image:yield Z(document.body),topOffset:0};window.parent.postMessage(b,a.origin)})}window.addEventListener("message",a=>u(function*(){if(Fa.some(d=>a.origin.includes(d))){var b=a.data;b&&(b.type==="MAKE_SCREENSHOT"&&(yield Ha(a)),b.type==="MAKE_SCREENSHOT_FOR_DATA_VISUALIZATION"&&(yield Ia(a)))}}));
+})();</script><script data-bard-client-injected="true">(function() {
+  // Ensure this script is executed only once
+  if (window.firebaseAuthBridgeScriptLoaded) {
+    return;
+  }
+  window.firebaseAuthBridgeScriptLoaded = true;
+
+  let nextTokenPromiseId = 0;
+
+  // Stores { resolve, reject } for ongoing token requests
+  const pendingTokenPromises = {};
+
+  // Listen for messages from the Host Application
+  window.addEventListener('message', function(event) {
+
+    const messageData = event.data;
+
+  if (messageData && messageData.type === 'RESOLVE_NEW_FIREBASE_TOKEN') {
+      const { success, token, error, promiseId } = messageData ?? {};
+      if (pendingTokenPromises[promiseId]) {
+        if (success) {
+          pendingTokenPromises[promiseId].resolve(token);
+        } else {
+          pendingTokenPromises[promiseId].reject(new Error(error || 'Token refresh failed from host.'));
+        }
+        delete pendingTokenPromises[promiseId];
+      }
+    }
+  });
+
+  // Expose a function for the Generated App to request a new Firebase token
+  window.requestNewFirebaseToken = function() {
+    const currentPromiseId = nextTokenPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingTokenPromises[currentPromiseId] = { resolve, reject };
+    });
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({
+        type: 'REQUEST_NEW_FIREBASE_TOKEN',
+        promiseId: currentPromiseId
+      }, '*');
+    } else {
+      pendingTokenPromises[currentPromiseId].reject(new Error('No parent window to request token from.'));
+      delete pendingTokenPromises[currentPromiseId];
+    }
+    return promise;
+  };
+})();</script><script data-bard-client-injected="true">
+let realOriginalGetUserMedia = null;
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+  realOriginalGetUserMedia = navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);
+}
+
+(function() {
+  if (navigator.mediaDevices && navigator.mediaDevices.__proto__) {
+    try {
+      Object.defineProperty(navigator.mediaDevices.__proto__, 'getUserMedia', {
+        get: function() {
+          return undefined; // Or throw an error
+        },
+        configurable: false
+      });
+    } catch (error) {
+      console.error("Error defining prototype getter:", error);
+    }
+  }
+})();
+
+(function() {
+  const pendingMediaResolvers = {};
+  let nextMediaPromiseId = 0;
+
+  function requestMediaPermissions(constraints) {
+    const mediaPromiseId = nextMediaPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingMediaResolvers[mediaPromiseId] = (granted) => {
+        delete pendingMediaResolvers[mediaPromiseId];
+        resolve(granted);
+      };
+    });
+
+    window.parent.postMessage({
+      type: 'requestMediaPermission',
+      constraints: constraints,
+      promiseId: mediaPromiseId,
+    }, '*');
+
+    return promise;
+  }
+
+  let originalGetUserMedia = realOriginalGetUserMedia;
+
+  function interceptGetUserMedia() {
+    if (navigator.mediaDevices) {
+      Object.defineProperty(navigator.mediaDevices, 'getUserMedia', {
+        value: function(constraints) {
+          return requestMediaPermissions(constraints).then((granted) => {
+            if (granted) {
+              if (originalGetUserMedia) {
+                return originalGetUserMedia(constraints);
+              } else {
+                throw new Error("Original getUserMedia not available.");
+              }
+            } else {
+              throw new DOMException('Permission denied', 'NotAllowedError');
+            }
+          });
+        },
+        writable: false,
+        configurable: false
+      });
+    }
+  }
+
+  interceptGetUserMedia();
+
+  const observer = new MutationObserver(function(mutationsList, observer) {
+    for (const mutation of mutationsList) {
+      if (mutation.type === 'reconfigured' && mutation.name === 'getUserMedia' && mutation.object === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'attributes' && mutation.attributeName === 'getUserMedia' && mutation.target === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'childList' && mutation.addedNodes) {
+        mutation.addedNodes.forEach(node => {
+          if (node === navigator.mediaDevices) {
+            interceptGetUserMedia();
+          }
+        });
+      }
+    }
+  });
+
+  function interceptSpeechRecognition() {
+    if (!window.SpeechRecognition && !window.webkitSpeechRecognition) {
+      return;
+    }
+
+    const OriginalSpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    const SpeechRecognitionWrapper = function(...args) {
+      const recognizer = new OriginalSpeechRecognition(...args);
+      const originalStart = recognizer.start.bind(recognizer);
+
+      recognizer.start = function() {
+        requestMediaPermissions({ audio: true }).then(granted => {
+          if (granted) {
+            originalStart();
+          } else {
+            const errorEvent = new SpeechRecognitionErrorEvent('error');
+            errorEvent.error = 'not-allowed'; // This is the standard error for permission denial.
+            recognizer.dispatchEvent(errorEvent);
+          }
+        });
+      };
+
+      return recognizer;
+    };
+
+    SpeechRecognitionWrapper.prototype = OriginalSpeechRecognition.prototype;
+    SpeechRecognitionWrapper.prototype.constructor = SpeechRecognitionWrapper;
+
+    if (window.SpeechRecognition) {
+      window.SpeechRecognition = SpeechRecognitionWrapper;
+    }
+    if (window.webkitSpeechRecognition) {
+      window.webkitSpeechRecognition = SpeechRecognitionWrapper;
+    }
+  }
+
+  interceptSpeechRecognition();
+
+  window.addEventListener('message', function(event) {
+    if (event.data) {
+      if (event.data.type === 'resolveMediaPermission') {
+        const { promiseId, granted } = event.data;
+        if (pendingMediaResolvers[promiseId]) {
+          pendingMediaResolvers[promiseId](granted);
+        }
+      }
+    }
+  });
+
+})();</script><script ws-interception-config="{&quot;parentOrigin&quot;:&quot;https://gemini.google.com&quot;,&quot;proxiedDomains&quot;:[]}" data-bard-client-injected="true">(function(){'use strict';var u=typeof Object.defineProperties=="function"?Object.defineProperty:function(b,d,e){if(b==Array.prototype||b==Object.prototype)return b;b[d]=e.value;return b};function v(b){b=["object"==typeof globalThis&&globalThis,b,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var d=0;d<b.length;++d){var e=b[d];if(e&&e.Math==Math)return e}throw Error("Cannot find global object");}var w=v(this);
+function y(b,d){if(d)a:{var e=w;b=b.split(".");for(var h=0;h<b.length-1;h++){var k=b[h];if(!(k in e))break a;e=e[k]}b=b[b.length-1];h=e[b];d=d(h);d!=h&&d!=null&&u(e,b,{configurable:!0,writable:!0,value:d})}}function z(b){function d(h){return b.next(h)}function e(h){return b.throw(h)}return new Promise(function(h,k){function m(n){n.done?h(n.value):Promise.resolve(n.value).then(d,e).then(m,k)}m(b.next())})}y("globalThis",function(b){return b||w});/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+function A(b,d){function e(){}e.prototype=d.prototype;b.j=d.prototype;b.prototype=new e;b.prototype.constructor=b;b.h=function(h,k,m){for(var n=Array(arguments.length-2),p=2;p<arguments.length;p++)n[p-2]=arguments[p];return d.prototype[k].apply(h,n)}};function B(b,d,e="*"){function h(a){if(typeof a==="string")return F.encode(a).buffer;if(a instanceof ArrayBuffer)return a.slice(0);if(ArrayBuffer.isView(a))return a.buffer.slice(a.byteOffset,a.byteOffset+a.byteLength);throw Error("Invalid data type");}function k(a){a=h(a);var f={type:"send",data:new Uint8Array(a)},g;(g=r)==null||g.postMessage(f,[a])}function m(){if(!r)throw Error("Data port not captured yet.");r.onmessage=a=>{if(a.data.type==="message"){a=new MessageEvent("message",{data:G.decode(a.data.data)});
+let f;(f=c.onmessage)==null||f.call(c,a);c.dispatchEvent(a)}}}function n(){if(!t)throw Error("Control port not captured yet.");t.onmessage=a=>{switch(a.data.type){case "open":l=1;var f=new Event("open"),g;(g=c.onopen)==null||g.call(c,f);c.dispatchEvent(f);q.forEach(H=>{k(H)});q=[];break;case "close":g=a.data;l=3;g=new CloseEvent("close",{code:g.code,reason:g.reason,wasClean:g.wasClean});(f=c.onclose)==null||f.call(c,g);c.dispatchEvent(g);break;case "error":l=3;f=new Event("error");let x;(x=c.onerror)==
+null||x.call(c,f);c.dispatchEvent(f)}}}function p(a){return z(function*(){var f=new MessageChannel;t=f.port1;var g=new MessageChannel;r=g.port1;n();m();window.parent.postMessage({type:"websocket_open",portOrdering:["control","data"],url:b,protocols:a||[],connectionId:I},e,[f.port2,g.port2])}())}var c=Reflect.construct(EventTarget,[],new.target);c.CONNECTING=0;c.OPEN=1;c.CLOSING=2;c.CLOSED=3;c.url=b;c.binaryType="arraybuffer";c.protocol="";c.i="";var l=0,t=null,r=null,q=[],F=new TextEncoder,G=new TextDecoder;
+c.onopen=null;c.onmessage=null;c.onclose=null;c.onerror=null;Object.defineProperty(c,"readyState",{get:()=>l,enumerable:!0,configurable:!0});Object.defineProperty(c,"bufferedAmount",{get:()=>{var a=0;q.forEach(f=>{a+=typeof f==="string"?f.length:f.byteLength});return a},enumerable:!0,configurable:!0});var I=function(){var a;return((a=globalThis.crypto)==null?0:a.randomUUID)?globalThis.crypto.randomUUID():"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,f=>{var g=Math.random()*16|0;return(f===
+"x"?g:g&3|8).toString(16)})}();c.send=a=>{if(l===1)a instanceof Blob?a.arrayBuffer().then(f=>{k(f)}):k(a);else if(l===0)if(typeof a==="string")q.push(a);else if(a instanceof ArrayBuffer||ArrayBuffer.isView(a))q.push(h(a));else throw Error("Sending Blob is not supported before the connection is open.");else console.debug("WebSocket send called in CLOSING or CLOSED state; ignored.")};c.close=(a=1E3,f="")=>{if(l!==2&&l!==3){l=2;a={type:"close",code:a,reason:f,wasClean:a===1E3};var g;(g=t)==null||g.postMessage(a)}};
+Promise.resolve().then(()=>p(d));return c}A(B,EventTarget);var C=document.currentScript,D=C==null?void 0:C.getAttribute("ws-interception-config");if(!D)throw Error("WebSocket Interceptor: Missing ws-interception-config attribute in the script tag.");var E=JSON.parse(D);if(!E.parentOrigin||typeof E.parentOrigin!=="string")throw Error("WebSocket Interceptor: Invalid parentOrigin in ws-interception-config");
+(function(b){var d=Object.getOwnPropertyDescriptor(window,"WebSocket");if(!d||d.writable||d.configurable)d=Object.assign(function(e,h){try{let k=(new URL(e)).hostname;if(b.proxiedDomains.some(m=>k===m||k.endsWith(`.${m}`)))return new B(e,h,b.parentOrigin)}catch(k){throw window.parent.postMessage({type:"websocket_blocked",url:e,reason:"blocked_invalid_url"},b.parentOrigin),new DOMException(`WebSocket connection to '${e}' is not allowed in Canvas.`,"SecurityError");}window.parent.postMessage({type:"websocket_blocked",
+url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMException(`WebSocket connection to '${e}' is not allowed in Canvas.`,"SecurityError");},{CONNECTING:0,OPEN:1,CLOSING:2,CLOSED:3}),Object.defineProperty(window,"WebSocket",{value:d,writable:!1,configurable:!1})})({proxiedDomains:E.proxiedDomains||[],parentOrigin:E.parentOrigin});}).call(this);
+</script><script data-bard-client-injected="true">(function() {
+  function normalizeSlug(str) {
+    try {
+      return str
+        .trim()
+        .toLowerCase()
+        .replace(/[^p{L}p{N}s_-]/gu, '')
+        .replace(/s+/g, '-');
+    } catch (e) {
+      return str
+        .trim()
+        .toLowerCase()
+        .replace(/[^a-z0-9s_-]/g, '')
+        .replace(/s+/g, '-');
+    }
+  }
+
+  function findTargetElement(hash) {
+    if (!hash || hash === '#') {
+      return null;
+    }
+    const rawId = hash.startsWith('#') ? hash.slice(1) : hash;
+    let decodedId = rawId;
+    try {
+      decodedId = decodeURIComponent(rawId);
+    } catch (e) {
+      // Ignore URI malformed errors.
+    }
+
+    // 1. Direct ID match (raw and decoded).
+    let target = document.getElementById(rawId) || document.getElementById(decodedId);
+    if (target) {
+      return target;
+    }
+
+    // 2. Name attribute match (<a name="...">).
+    try {
+      if (typeof CSS !== 'undefined' && CSS.escape) {
+        target =
+          document.querySelector('[name="' + CSS.escape(rawId) + '"]') ||
+          document.querySelector('[name="' + CSS.escape(decodedId) + '"]');
+      } else {
+        const namedElements = document.getElementsByName(rawId);
+        if (namedElements && namedElements.length > 0) {
+          return namedElements[0];
+        }
+      }
+    } catch (e) {
+      // Ignore querySelector syntax errors.
+    }
+    if (target) {
+      return target;
+    }
+
+    // 3. Match heading text by slug (for Markdown TOCs where headings lack explicit IDs).
+    const targetSlug = normalizeSlug(decodedId);
+    if (targetSlug) {
+      for (const heading of document.querySelectorAll('h1, h2, h3, h4, h5, h6')) {
+        if (normalizeSlug(heading.textContent || '') === targetSlug) {
+          return heading;
+        }
+      }
+    }
+
+    return null;
+  }
+
+  document.addEventListener('click', function(event) {
+    const target = event.target;
+    const anchor = target && typeof target.closest === 'function' ? target.closest('a') : null;
+    if (!anchor) {
+      return;
+    }
+
+    const href = anchor.getAttribute('href');
+    if (
+      !href ||
+      href.trim().toLowerCase().startsWith('javascript:') ||
+      anchor.hasAttribute('download')
+    ) {
+      return;
+    }
+
+    // Check if the link is an in-page hash / anchor link.
+    if (href.startsWith('#')) {
+      event.preventDefault();
+      const targetElement = findTargetElement(href);
+      if (targetElement) {
+        targetElement.scrollIntoView({behavior: 'smooth', block: 'start'});
+      }
+      return;
+    }
+
+    // Check if the URL has the same origin/pathname but with a hash.
+    try {
+      const url = new URL(anchor.href, window.location.href);
+      if (
+        url.hash &&
+        url.origin === window.location.origin &&
+        url.pathname === window.location.pathname
+      ) {
+        event.preventDefault();
+        const targetElement = findTargetElement(url.hash);
+        if (targetElement) {
+          targetElement.scrollIntoView({behavior: 'smooth', block: 'start'});
+        }
+        return;
+      }
+    } catch (e) {
+      // Fall through if URL parsing fails.
+    }
+
+    // For all external or full navigation links, prevent iframe-level navigation
+    // (which breaks in AGSA WebView or sandboxed iframes) and ensure they open
+    // safely in a new tab/window.
+    if (anchor.target !== '_blank') {
+      event.preventDefault();
+      window.open(anchor.href, '_blank', 'noopener,noreferrer');
+    }
+  }, {capture: true});
+})();</script><script data-bard-client-injected="true">(function(){'use strict';function a(){window.parent.postMessage({type:"interaction"},"*")}window.addEventListener("click",a,{capture:!0,passive:!0});window.addEventListener("touchstart",a,{capture:!0,passive:!0});window.addEventListener("keydown",a,{capture:!0,passive:!0});}).call(this);
+</script><script data-bard-client-injected="true">(function() {
+  const originalConsoleLog = console.log;
+  const originalConsoleError = console.error;
+
+    /**
+   * Normalizes an error event or a promise rejection reason into a structured error object.
+   * @param {*} errorEventOrReason The error object or reason.
+   * @return {object} Structured error data { message, name, stack }.
+   */
+  function getErrorObject(errorEventOrReason) {
+    if (errorEventOrReason instanceof Error) {
+      return {
+        message: errorEventOrReason.message,
+        name: errorEventOrReason.name,
+        stack: errorEventOrReason.stack,
+      };
+    }
+    // Fallback for non-Error objects.
+    try {
+      return {
+        message: JSON.stringify(errorEventOrReason),
+        name: 'UnknownErrorType',
+        stack: null,
+      };
+    } catch (e) {
+      return {
+        message: String(errorEventOrReason),
+        name: 'UnknownErrorTypeNonStringifiable',
+        stack: null,
+      };
+    }
+  }
+
+  /**
+   * Converts an array of arguments (from log/error) into a single string.
+   * Handles Error objects specially to include their message and stack.
+   * @param {Array<*>} args - Arguments passed to console methods.
+   * @return {string} A string representation of the arguments.
+   */
+  function stringifyArgs(args) {
+    return args
+      .map((arg) => {
+        if (arg instanceof Error) {
+          const {message, stack} = arg;
+          return `Error: ${message}${stack ? ('\nStack: ' + stack) : ''}`;
+        }
+        if (typeof arg === 'object' && arg !== null) {
+          try {
+            return JSON.stringify(arg);
+          } catch (error) {
+            return '[Circular Object]';
+          }
+        } else {
+          return String(arg);
+        }
+      })
+      .join(' ');
+  }
+
+  console.log = function(...args) {
+    const logString = stringifyArgs(args);
+    window.parent.postMessage({ type: 'log', message: logString }, '*');
+    originalConsoleLog.apply(console, args);
+  };
+
+  console.error = function(...args) {
+    let errorData;
+    if (args.length > 0 && args[0] instanceof Error) {
+      const err = args[0];
+      // If the first arg is an Error, capture its details.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        ...getErrorObject(err),
+        rawArgsString: stringifyArgs(args.slice(1)),
+        timestamp: new Date().toISOString(),
+      };
+    } else {
+      // If not an Error object, treat all args as a general error message.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        message: stringifyArgs(args),
+        name: 'ConsoleLoggedError',
+        stack: null,
+        timestamp: new Date().toISOString(),
+      };
+    }
+    window.parent.postMessage(errorData, '*');
+    originalConsoleError.apply(console, args);
+  };
+
+  // Listen for global unhandled synchronous errors.
+  window.addEventListener('error', function(event) {
+    const errorDetails = event.error ? getErrorObject(event.error) : {
+      message: event.message,
+      name: 'GlobalError',
+      stack: null,
+      filename: event.filename,
+      lineno: event.lineno,
+      colno: event.colno,
+    };
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'global',
+      ...errorDetails,
+      message: errorDetails.message || event.message,
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+  // Listen for unhandled promise rejections (asynchronous errors).
+  window.addEventListener('unhandledrejection', function(event) {
+    const errorDetails = getErrorObject(event.reason);
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'unhandledrejection',
+      ...errorDetails,
+      message: errorDetails.message || 'Unhandled Promise Rejection',
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+})();</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>架空世界旅行サークル メンバー自己紹介｜拓斗 (Takuto)</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Noto Sans JP, Zen Maru Gothic, Cinzel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&amp;family=Noto+Sans+JP:wght@400;500;700;900&amp;family=Zen+Maru+Gothic:wght@500;700;900&amp;display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        maru: ['"Zen Maru Gothic"', 'sans-serif'],
+                        serif: ['"Cinzel"', 'serif'],
+                    },
+                    colors: {
+                        parchment: '#fcf8ef',
+                        cream: '#f4ede0',
+                        navy: '#121d36',
+                        gold: '#c89b3c',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* 警告テープ風の斜めストライプ */
+        .hazard-stripe {
+            background: repeating-linear-gradient(
+                -45deg,
+                #dc2626,
+                #dc2626 10px,
+                #fef2f2 10px,
+                #fef2f2 20px
+            );
+        }
+        /* ゴールドの微細な斜線アクセント */
+        .gold-stripe {
+            background: repeating-linear-gradient(
+                -45deg,
+                #c89b3c,
+                #c89b3c 10px,
+                #fefce8 10px,
+                #fefce8 20px
+            );
+        }
+        /* スタンプ押下アニメーション */
+        @keyframes stampDrop {
+            0% { transform: scale(1.8) rotate(-18deg); opacity: 0; }
+            65% { transform: scale(0.92) rotate(-5deg); opacity: 1; }
+            100% { transform: scale(1) rotate(-8deg); opacity: 1; }
+        }
+        .animate-stamp-drop {
+            animation: stampDrop 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+        /* 羊皮紙のわずかな質感 */
+        .parchment-texture {
+            background-color: #fcf8ef;
+            background-image: radial-gradient(#d6c7a9 0.6px, transparent 0.6px);
+            background-size: 18px 18px;
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:"Noto Sans JP", sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.-bottom-2{bottom:-0.5rem}.-left-2{left:-0.5rem}.-right-2{right:-0.5rem}.-top-2{top:-0.5rem}.z-10{z-index:10}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.my-0\.5{margin-top:0.125rem;margin-bottom:0.125rem}.mb-1{margin-bottom:0.25rem}.mb-2\.5{margin-bottom:0.625rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.ml-0\.5{margin-left:0.125rem}.mr-1{margin-right:0.25rem}.mt-0\.5{margin-top:0.125rem}.mt-1{margin-top:0.25rem}.mt-10{margin-top:2.5rem}.mt-3{margin-top:0.75rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-12{height:3rem}.h-2{height:0.5rem}.h-2\.5{height:0.625rem}.h-36{height:9rem}.h-56{height:14rem}.h-6{height:1.5rem}.h-8{height:2rem}.h-auto{height:auto}.h-px{height:1px}.max-h-\[380px\]{max-height:380px}.min-h-\[200px\]{min-height:200px}.min-h-screen{min-height:100vh}.w-12{width:3rem}.w-36{width:9rem}.w-6{width:1.5rem}.w-8{width:2rem}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-4xl{max-width:56rem}.flex-1{flex:1 1 0%}.flex-shrink-0{flex-shrink:0}.-rotate-6{--tw-rotate:-6deg;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.cursor-pointer{cursor:pointer}.select-none{-webkit-user-select:none;user-select:none}.resize-none{resize:none}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.items-baseline{align-items:baseline}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-2\.5{gap:0.625rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-5{gap:1.25rem}.gap-6{gap:1.5rem}.space-x-1\.5 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.375rem * var(--tw-space-x-reverse));margin-left:calc(0.375rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-2 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.5rem * var(--tw-space-x-reverse));margin-left:calc(0.5rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-3 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.75rem * var(--tw-space-x-reverse));margin-left:calc(0.75rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-9 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(2.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(2.25rem * var(--tw-space-y-reverse))}.self-center{align-self:center}.overflow-hidden{overflow:hidden}.rounded{border-radius:0.25rem}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.rounded-bl-lg{border-bottom-left-radius:0.5rem}.rounded-br-lg{border-bottom-right-radius:0.5rem}.rounded-tl-lg{border-top-left-radius:0.5rem}.rounded-tr-lg{border-top-right-radius:0.5rem}.border{border-width:1px}.border-2{border-width:2px}.border-4{border-width:4px}.border-b{border-bottom-width:1px}.border-b-2{border-bottom-width:2px}.border-b-4{border-bottom-width:4px}.border-l-4{border-left-width:4px}.border-r-4{border-right-width:4px}.border-t{border-top-width:1px}.border-t-2{border-top-width:2px}.border-t-4{border-top-width:4px}.border-dashed{border-style:dashed}.border-double{border-style:double}.border-amber-200{--tw-border-opacity:1;border-color:rgb(253 230 138 / var(--tw-border-opacity, 1))}.border-amber-200\/90{border-color:rgb(253 230 138 / 0.9)}.border-amber-300{--tw-border-opacity:1;border-color:rgb(252 211 77 / var(--tw-border-opacity, 1))}.border-amber-300\/90{border-color:rgb(252 211 77 / 0.9)}.border-amber-400{--tw-border-opacity:1;border-color:rgb(251 191 36 / var(--tw-border-opacity, 1))}.border-amber-400\/40{border-color:rgb(251 191 36 / 0.4)}.border-amber-400\/60{border-color:rgb(251 191 36 / 0.6)}.border-amber-500\/30{border-color:rgb(245 158 11 / 0.3)}.border-amber-600{--tw-border-opacity:1;border-color:rgb(217 119 6 / var(--tw-border-opacity, 1))}.border-amber-700\/40{border-color:rgb(180 83 9 / 0.4)}.border-emerald-200{--tw-border-opacity:1;border-color:rgb(167 243 208 / var(--tw-border-opacity, 1))}.border-emerald-300{--tw-border-opacity:1;border-color:rgb(110 231 183 / var(--tw-border-opacity, 1))}.border-emerald-500{--tw-border-opacity:1;border-color:rgb(16 185 129 / var(--tw-border-opacity, 1))}.border-gold{--tw-border-opacity:1;border-color:rgb(200 155 60 / var(--tw-border-opacity, 1))}.border-red-200{--tw-border-opacity:1;border-color:rgb(254 202 202 / var(--tw-border-opacity, 1))}.border-red-300{--tw-border-opacity:1;border-color:rgb(252 165 165 / var(--tw-border-opacity, 1))}.border-red-400{--tw-border-opacity:1;border-color:rgb(248 113 113 / var(--tw-border-opacity, 1))}.border-red-500{--tw-border-opacity:1;border-color:rgb(239 68 68 / var(--tw-border-opacity, 1))}.border-red-600{--tw-border-opacity:1;border-color:rgb(220 38 38 / var(--tw-border-opacity, 1))}.border-slate-200{--tw-border-opacity:1;border-color:rgb(226 232 240 / var(--tw-border-opacity, 1))}.border-slate-300{--tw-border-opacity:1;border-color:rgb(203 213 225 / var(--tw-border-opacity, 1))}.border-slate-700{--tw-border-opacity:1;border-color:rgb(51 65 85 / var(--tw-border-opacity, 1))}.bg-amber-100{--tw-bg-opacity:1;background-color:rgb(254 243 199 / var(--tw-bg-opacity, 1))}.bg-amber-300{--tw-bg-opacity:1;background-color:rgb(252 211 77 / var(--tw-bg-opacity, 1))}.bg-amber-400\/20{background-color:rgb(251 191 36 / 0.2)}.bg-amber-50{--tw-bg-opacity:1;background-color:rgb(255 251 235 / var(--tw-bg-opacity, 1))}.bg-amber-500{--tw-bg-opacity:1;background-color:rgb(245 158 11 / var(--tw-bg-opacity, 1))}.bg-amber-500\/15{background-color:rgb(245 158 11 / 0.15)}.bg-cream{--tw-bg-opacity:1;background-color:rgb(244 237 224 / var(--tw-bg-opacity, 1))}.bg-cream\/90{background-color:rgb(244 237 224 / 0.9)}.bg-emerald-100{--tw-bg-opacity:1;background-color:rgb(209 250 229 / var(--tw-bg-opacity, 1))}.bg-emerald-50{--tw-bg-opacity:1;background-color:rgb(236 253 245 / var(--tw-bg-opacity, 1))}.bg-emerald-700{--tw-bg-opacity:1;background-color:rgb(4 120 87 / var(--tw-bg-opacity, 1))}.bg-navy{--tw-bg-opacity:1;background-color:rgb(18 29 54 / var(--tw-bg-opacity, 1))}.bg-red-300{--tw-bg-opacity:1;background-color:rgb(252 165 165 / var(--tw-bg-opacity, 1))}.bg-red-50{--tw-bg-opacity:1;background-color:rgb(254 242 242 / var(--tw-bg-opacity, 1))}.bg-red-50\/80{background-color:rgb(254 242 242 / 0.8)}.bg-red-600{--tw-bg-opacity:1;background-color:rgb(220 38 38 / var(--tw-bg-opacity, 1))}.bg-slate-100{--tw-bg-opacity:1;background-color:rgb(241 245 249 / var(--tw-bg-opacity, 1))}.bg-slate-50{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.bg-slate-800\/90{background-color:rgb(30 41 59 / 0.9)}.bg-slate-900{--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.bg-slate-950\/75{background-color:rgb(2 6 23 / 0.75)}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.from-emerald-600{--tw-gradient-from:#059669 var(--tw-gradient-from-position);--tw-gradient-to:rgb(5 150 105 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-teal-500{--tw-gradient-to:rgb(20 184 166 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #14b8a6 var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-amber-400{--tw-gradient-to:#fbbf24 var(--tw-gradient-to-position)}.object-contain{object-fit:contain}.p-1{padding:0.25rem}.p-3{padding:0.75rem}.p-3\.5{padding:0.875rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.p-2{padding:0.5rem}.px-1{padding-left:0.25rem;padding-right:0.25rem}.px-1\.5{padding-left:0.375rem;padding-right:0.375rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-2\.5{padding-left:0.625rem;padding-right:0.625rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-3\.5{padding-top:0.875rem;padding-bottom:0.875rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-8{padding-top:2rem;padding-bottom:2rem}.pb-6{padding-bottom:1.5rem}.pt-0\.5{padding-top:0.125rem}.pt-5{padding-top:1.25rem}.pt-7{padding-top:1.75rem}.text-center{text-align:center}.text-right{text-align:right}.font-maru{font-family:"Zen Maru Gothic", sans-serif}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.font-sans{font-family:"Noto Sans JP", sans-serif}.font-serif{font-family:"Cinzel", serif}.text-2xl{font-size:1.5rem;line-height:2rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-5xl{font-size:3rem;line-height:1}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-\[9px\]{font-size:9px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-black{font-weight:900}.font-bold{font-weight:700}.uppercase{text-transform:uppercase}.leading-none{line-height:1}.leading-relaxed{line-height:1.625}.tracking-tight{letter-spacing:-0.025em}.tracking-wide{letter-spacing:0.025em}.tracking-wider{letter-spacing:0.05em}.tracking-widest{letter-spacing:0.1em}.text-amber-200{--tw-text-opacity:1;color:rgb(253 230 138 / var(--tw-text-opacity, 1))}.text-amber-300{--tw-text-opacity:1;color:rgb(252 211 77 / var(--tw-text-opacity, 1))}.text-amber-600{--tw-text-opacity:1;color:rgb(217 119 6 / var(--tw-text-opacity, 1))}.text-amber-700{--tw-text-opacity:1;color:rgb(180 83 9 / var(--tw-text-opacity, 1))}.text-amber-900{--tw-text-opacity:1;color:rgb(120 53 15 / var(--tw-text-opacity, 1))}.text-amber-950{--tw-text-opacity:1;color:rgb(69 26 3 / var(--tw-text-opacity, 1))}.text-emerald-300{--tw-text-opacity:1;color:rgb(110 231 183 / var(--tw-text-opacity, 1))}.text-emerald-700{--tw-text-opacity:1;color:rgb(4 120 87 / var(--tw-text-opacity, 1))}.text-emerald-800{--tw-text-opacity:1;color:rgb(6 95 70 / var(--tw-text-opacity, 1))}.text-emerald-900{--tw-text-opacity:1;color:rgb(6 78 59 / var(--tw-text-opacity, 1))}.text-emerald-950{--tw-text-opacity:1;color:rgb(2 44 34 / var(--tw-text-opacity, 1))}.text-navy{--tw-text-opacity:1;color:rgb(18 29 54 / var(--tw-text-opacity, 1))}.text-red-600{--tw-text-opacity:1;color:rgb(220 38 38 / var(--tw-text-opacity, 1))}.text-red-700{--tw-text-opacity:1;color:rgb(185 28 28 / var(--tw-text-opacity, 1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85 / var(--tw-text-opacity, 1))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59 / var(--tw-text-opacity, 1))}.text-slate-900{--tw-text-opacity:1;color:rgb(15 23 42 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.opacity-0{opacity:0}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.selection\:bg-amber-400 *::selection{--tw-bg-opacity:1;background-color:rgb(251 191 36 / var(--tw-bg-opacity, 1))}.selection\:text-navy *::selection{--tw-text-opacity:1;color:rgb(18 29 54 / var(--tw-text-opacity, 1))}.selection\:bg-amber-400::selection{--tw-bg-opacity:1;background-color:rgb(251 191 36 / var(--tw-bg-opacity, 1))}.selection\:text-navy::selection{--tw-text-opacity:1;color:rgb(18 29 54 / var(--tw-text-opacity, 1))}.hover\:rotate-0:hover{--tw-rotate:0deg;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:scale-105:hover{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:bg-amber-100:hover{--tw-bg-opacity:1;background-color:rgb(254 243 199 / var(--tw-bg-opacity, 1))}.hover\:bg-amber-600:hover{--tw-bg-opacity:1;background-color:rgb(217 119 6 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-800:hover{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.hover\:text-navy:hover{--tw-text-opacity:1;color:rgb(18 29 54 / var(--tw-text-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.hover\:shadow-lg:hover{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.active\:scale-95:active{--tw-scale-x:.95;--tw-scale-y:.95;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@media (min-width: 640px){.sm\:flex-initial{flex:0 1 auto}.sm\:grid-cols-6{grid-template-columns:repeat(6, minmax(0, 1fr))}.sm\:justify-start{justify-content:flex-start}.sm\:p-10{padding:2.5rem}.sm\:p-4{padding:1rem}.sm\:p-7{padding:1.75rem}.sm\:p-8{padding:2rem}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:text-left{text-align:left}.sm\:text-2xl{font-size:1.5rem;line-height:2rem}.sm\:text-3xl{font-size:1.875rem;line-height:2.25rem}.sm\:text-5xl{font-size:3rem;line-height:1}.sm\:text-\[15px\]{font-size:15px}.sm\:text-base{font-size:1rem;line-height:1.5rem}.sm\:text-sm{font-size:0.875rem;line-height:1.25rem}}@media (min-width: 768px){.md\:grid-cols-12{grid-template-columns:repeat(12, minmax(0, 1fr))}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:items-center{align-items:center}}@media (min-width: 1024px){.lg\:w-auto{width:auto}.lg\:flex-row{flex-direction:row}.lg\:px-8{padding-left:2rem;padding-right:2rem}}</style></head>
+<body class="bg-slate-900 min-h-screen py-8 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center font-sans text-slate-800 selection:bg-amber-400 selection:text-navy">
+
+    <!-- メインコンテナ -->
+    <main class="relative z-10 w-full max-w-4xl">
+        
+        <!-- ヘッダータイトル -->
+        <header class="text-center mb-6">
+            <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-amber-500/15 border border-amber-400/40 text-amber-300 text-xs font-serif font-bold tracking-widest uppercase mb-2.5 shadow-sm">
+                <i class="fa-solid fa-compass"></i>
+                <span>FICTIONAL WORLD TRAVEL CLUB — MEMBER PASSPORT</span>
+            </div>
+            <h1 class="text-2xl sm:text-3xl font-black text-white tracking-wide font-maru">
+                架空世界旅行サークル メンバー自己紹介
+            </h1>
+        </header>
+
+        <!-- パスポート本体カード -->
+        <article class="parchment-texture rounded-3xl shadow-2xl overflow-hidden border-4 border-amber-700/40 relative">
+            
+            <!-- パスポート上部ヘッダーバー -->
+            <div class="bg-navy text-white px-6 py-4 flex flex-wrap justify-between items-center gap-2 border-b-4 border-gold">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 rounded-full bg-amber-400/20 border border-amber-400 flex items-center justify-center text-amber-300">
+                        <i class="fa-solid fa-passport"></i>
+                    </div>
+                    <div>
+                        <span class="block font-serif text-xs sm:text-sm font-bold tracking-widest text-amber-300">OFFICIAL TRAVELER PASSPORT</span>
+                        <span class="block text-[10px] text-slate-300 tracking-wider">架空世界渡航許可証</span>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <span class="inline-block font-mono text-xs bg-slate-800/90 text-amber-200 px-3 py-1 rounded-lg border border-amber-500/30">
+                        ID: FWTC-012-TAKUTO
+                    </span>
+                </div>
+            </div>
+
+            <!-- 1. メインビジュアル写真フレーム（image_94d4a6.jpg） -->
+            <div class="p-5 sm:p-8 bg-cream/90 border-b-2 border-amber-200/90">
+                <div id="photo-drop-zone" class="relative max-w-2xl mx-auto bg-white p-3 sm:p-4 rounded-2xl shadow-lg border-2 border-amber-300/90 transition-colors">
+                    <!-- 写真コーナー装飾 -->
+                    <div class="absolute -top-2 -left-2 w-6 h-6 border-t-4 border-l-4 border-gold rounded-tl-lg pointer-events-none"></div>
+                    <div class="absolute -top-2 -right-2 w-6 h-6 border-t-4 border-r-4 border-gold rounded-tr-lg pointer-events-none"></div>
+                    <div class="absolute -bottom-2 -left-2 w-6 h-6 border-b-4 border-l-4 border-gold rounded-bl-lg pointer-events-none"></div>
+                    <div class="absolute -bottom-2 -right-2 w-6 h-6 border-b-4 border-r-4 border-gold rounded-br-lg pointer-events-none"></div>
+
+                    <!-- 画像表示エリア -->
+                    <div class="overflow-hidden rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center min-h-[200px]">
+                        <img id="member-photo" src="image_94d4a6.jpg" alt="仲間とともに左腕の×印を掲げる象徴的な1枚" class="w-full h-auto max-h-[380px] object-contain mx-auto">
+                    </div>
+
+                    <!-- 写真キャプション ＆ 画像差し替えプレビュー用ボタン -->
+                    <div class="mt-3 flex flex-wrap items-center justify-between gap-2 px-1">
+                        <span class="inline-flex items-center space-x-1.5 text-xs font-bold text-navy">
+                            <i class="fa-solid fa-camera-retro text-amber-600"></i>
+                            <span>PHOTO LOG #01：仲間とともに左腕の×印を掲げる象徴的な1枚</span>
+                        </span>
+                        <div class="flex items-center gap-2">
+                            <label for="photo-file-input" class="cursor-pointer inline-flex items-center gap-1 text-[11px] font-bold text-slate-600 hover:text-navy bg-slate-100 hover:bg-amber-100 border border-slate-300 px-2.5 py-1 rounded-lg transition-colors" title="プレビュー環境でローカル画像を確認したい場合に選択できます">
+                                <i class="fa-regular fa-image text-amber-700"></i>
+                                <span>画像を選択</span>
+                            </label>
+                            <input id="photo-file-input" type="file" accept="image/*" class="hidden">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. プロフィール基本情報 ＆ 活動回数12回スタンプ -->
+            <div class="p-6 sm:p-10">
+                <div class="bg-white rounded-2xl p-6 sm:p-7 border-2 border-amber-200 shadow-sm">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                        <!-- 名前と自己紹介文 -->
+                        <div class="flex-1">
+                            <div class="inline-flex items-center space-x-1.5 text-[11px] font-bold tracking-widest uppercase text-amber-900 bg-amber-100 border border-amber-300 px-3 py-1 rounded-full mb-2.5">
+                                <i class="fa-solid fa-user-check text-amber-700"></i>
+                                <span>MEMBER NAME / 名前</span>
+                            </div>
+                            <div class="flex items-baseline flex-wrap gap-3">
+                                <h2 class="text-4xl sm:text-5xl font-black text-navy tracking-tight font-maru">拓斗</h2>
+                                <span class="text-xl sm:text-2xl font-serif font-bold text-amber-700">Takuto</span>
+                            </div>
+                            <p class="text-slate-700 text-sm sm:text-base mt-3 leading-relaxed">
+                                こんにちは！架空世界旅行サークルの<strong>拓斗</strong>です。これまで<strong>12回</strong>の異世界・物語世界への渡航を経験してきました。最高の冒険や快適な街づくりが楽しめる「好きな世界」から、観光気分で行くと確実に命の危険がある「おすすめしない世界」まで、実体験をもとに記録しています！
+                            </p>
+                        </div>
+
+                        <!-- 活動回数 12回 メインバッジ -->
+                        <div class="flex-shrink-0 self-center">
+                            <div class="w-36 h-36 rounded-full border-4 border-double border-amber-600 bg-amber-50 text-navy flex flex-col items-center justify-center transform -rotate-6 hover:rotate-0 transition-transform duration-300 shadow-md select-none">
+                                <span class="text-[9px] font-serif font-bold tracking-widest text-amber-700 uppercase">TOTAL VISITS</span>
+                                <span class="text-xs font-bold text-slate-700 mt-0.5">活動回数</span>
+                                <div class="flex items-baseline my-0.5 text-amber-700">
+                                    <span class="text-5xl font-black leading-none font-maru">12</span>
+                                    <span class="text-base font-black ml-0.5">回</span>
+                                </div>
+                                <span class="text-[9px] font-serif font-bold tracking-widest text-emerald-700 border-t border-amber-400/60 pt-0.5 px-2 mt-0.5">12 STAMPS EARNED</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 12回の活動スタンプアイコン一覧 -->
+                    <div class="mt-6 pt-5 border-t border-dashed border-amber-300">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold text-navy flex items-center gap-1.5">
+                                <i class="fa-solid fa-certificate text-amber-600"></i>
+                                <span>渡航実績スタンプ（全12回コンプリート）</span>
+                            </span>
+                            <span class="text-[11px] font-serif font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full">
+                                12 / 12 LOGGED
+                            </span>
+                        </div>
+                        <div id="activity-stamps-grid" class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-12 gap-2">
+                            <!-- JavaScriptで12個のスタンプアイコンを自動生成 -->
+                        <div class="flex flex-col items-center justify-center p-2 rounded-xl bg-amber-50 border border-amber-300/90 text-navy hover:bg-amber-100 hover:scale-105 transition-all select-none">
+                    <i class="fa-solid fa-compass text-amber-600 text-xs sm:text-sm mb-1"></i>
+                    <span class="font-serif text-[10px] font-bold text-slate-700">#01</span>
+                </div><div class="flex flex-col items-center justify-center p-2 rounded-xl bg-amber-50 border border-amber-300/90 text-navy hover:bg-amber-100 hover:scale-105 transition-all select-none">
+                    <i class="fa-solid fa-anchor text-amber-600 text-xs sm:text-sm mb-1"></i>
+                    <span class="font-serif text-[10px] font-bold text-slate-700">#02</span>
+                </div><div class="flex flex-col items-center justify-center p-2 rounded-xl bg-amber-50 border border-amber-300/90 text-navy hover:bg-amber-100 hover:scale-105 transition-all select-none">
+                    <i class="fa-solid fa-dragon text-amber-600 text-xs sm:text-sm mb-1"></i>
+                    <span class="font-serif text-[10px] font-bold text-slate-700">#03</span>
+                </div><div class="flex flex-col items-center justify-center p-2 rounded-xl bg-amber-50 border border-amber-300/90 text-navy hover:bg-amber-100 hover:scale-105 transition-all select-none">
+                    <i class="fa-solid fa-ship text-amber-600 text-xs sm:text-sm mb-1"></i>
+                    <span class="font-serif text-[10px] font-bold text-slate-700">#04</span>
+                </div><div class="flex flex-col items-center justify-center p-2 rounded-xl bg-amber-50 border border-amber-300/90 text-navy hover:bg-amber-100 hover:scale-105 transition-all select-none">
+                    <i class="fa-solid fa-map text-amber-600 text-xs sm:text-sm mb-1"></i>
+                    <span class="font-serif text-[10px] font-bold text-slate-700">#05</span>
+                </div><div class="flex flex-col items-center justify-center p-2 rounded-xl bg-amber-50 border border-amber-300/90 text-navy hover:bg-amber-100 hover:scale-105 transition-all select-none">
+                    <i class="fa-solid fa-hat-wizard text-amber-600 text-xs sm:text-sm mb-1"></i>
+                    <span class="font-serif text-[10px] font-bold text-slate-700">#06</span>
+                </div><div class="flex flex-col items-center justify-center p-2 rounded-xl bg-amber-50 border border-amber-300/90 text-navy hover:bg-amber-100 hover:scale-105 transition-all select-none">
+                    <i class="fa-solid fa-mountain-sun text-amber-600 text-xs sm:text-sm mb-1"></i>
+                    <span class="font-serif text-[10px] font-bold text-slate-700">#07</span>
+                </div><div class="flex flex-col items-center justify-center p-2 rounded-xl bg-amber-50 border border-amber-300/90 text-navy hover:bg-amber-100 hover:scale-105 transition-all select-none">
+                    <i class="fa-solid fa-crown text-amber-600 text-xs sm:text-sm mb-1"></i>
+                    <span class="font-serif text-[10px] font-bold text-slate-700">#08</span>
+                </div><div class="flex flex-col items-center justify-center p-2 rounded-xl bg-amber-50 border border-amber-300/90 text-navy hover:bg-amber-100 hover:scale-105 transition-all select-none">
+                    <i class="fa-solid fa-scroll text-amber-600 text-xs sm:text-sm mb-1"></i>
+                    <span class="font-serif text-[10px] font-bold text-slate-700">#09</span>
+                </div><div class="flex flex-col items-center justify-center p-2 rounded-xl bg-amber-50 border border-amber-300/90 text-navy hover:bg-amber-100 hover:scale-105 transition-all select-none">
+                    <i class="fa-solid fa-gem text-amber-600 text-xs sm:text-sm mb-1"></i>
+                    <span class="font-serif text-[10px] font-bold text-slate-700">#10</span>
+                </div><div class="flex flex-col items-center justify-center p-2 rounded-xl bg-amber-50 border border-amber-300/90 text-navy hover:bg-amber-100 hover:scale-105 transition-all select-none">
+                    <i class="fa-solid fa-fire text-amber-600 text-xs sm:text-sm mb-1"></i>
+                    <span class="font-serif text-[10px] font-bold text-slate-700">#11</span>
+                </div><div class="flex flex-col items-center justify-center p-2 rounded-xl bg-amber-50 border border-amber-300/90 text-navy hover:bg-amber-100 hover:scale-105 transition-all select-none">
+                    <i class="fa-solid fa-flag-checkered text-amber-600 text-xs sm:text-sm mb-1"></i>
+                    <span class="font-serif text-[10px] font-bold text-slate-700">#12</span>
+                </div></div>
+                    </div>
+                </div>
+
+                <!-- 3. 渡航ワールド紹介（フィルターなし・全一覧表示・背景装飾なしのクリア設計） -->
+                <div class="mt-10 space-y-9">
+                    
+                    <!-- セクションA：好きな世界（ゴールド＆エメラルドテーマ） -->
+                    <section>
+                        <div class="flex items-center gap-2.5 mb-4">
+                            <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-emerald-700 text-white text-xs sm:text-sm font-bold shadow-sm">
+                                <i class="fa-solid fa-star text-amber-300"></i>
+                                <span>FAVORITE WORLDS / 好きな世界</span>
+                            </span>
+                            <div class="h-px flex-1 bg-amber-300"></div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- 好きな世界 1：ワンピース -->
+                            <div class="bg-white rounded-2xl border-2 border-amber-400 shadow-md overflow-hidden flex flex-col justify-between">
+                                <div class="h-2 w-full gold-stripe border-b border-amber-300"></div>
+
+                                <div class="p-6">
+                                    <div class="flex items-center justify-between gap-2 mb-3">
+                                        <span class="inline-flex items-center gap-1.5 text-amber-950 bg-amber-100 border border-amber-300 px-3 py-1 rounded-full text-xs font-bold">
+                                            <i class="fa-solid fa-compass text-amber-700"></i>
+                                            <span>好きな世界 #01</span>
+                                        </span>
+                                        <span class="text-xs font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full">
+                                            冒険度 ★★★★★
+                                        </span>
+                                    </div>
+
+                                    <h3 class="text-2xl font-black text-navy font-maru">ワンピース</h3>
+                                    <p class="text-xs font-serif font-bold text-amber-700 tracking-wider mb-3">ONE PIECE</p>
+
+                                    <p class="text-slate-800 text-sm sm:text-[15px] leading-relaxed">
+                                        広大な海と仲間との絆、未知の島をめぐる最高の冒険世界。左腕に「×印」を掲げて無言で別れるシーンのように、言葉を超えた信頼関係とロマンに一番憧れます。
+                                    </p>
+                                </div>
+
+                                <div class="px-6 pb-6">
+                                    <div class="bg-amber-50 rounded-xl p-3.5 border border-amber-200 text-xs sm:text-sm text-slate-800">
+                                        <span class="font-bold text-amber-900 flex items-center gap-1.5 mb-1">
+                                            <i class="fa-solid fa-map-location-dot text-amber-700"></i>おすすめポイント：
+                                        </span>
+                                        ログポースを頼りに未知の島へ上陸し、仲間たちと宴で盛り上がる最高の冒険旅！
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 好きな世界 2：転生したらスライムだった件（転スラ） ※背景イラスト一切なし・高コントラスト -->
+                            <div class="bg-white rounded-2xl border-2 border-emerald-500 shadow-md overflow-hidden flex flex-col justify-between">
+                                <div class="h-2 w-full bg-gradient-to-r from-emerald-600 via-teal-500 to-amber-400"></div>
+
+                                <div class="p-6">
+                                    <div class="flex items-center justify-between gap-2 mb-3">
+                                        <span class="inline-flex items-center gap-1.5 text-emerald-950 bg-emerald-100 border border-emerald-300 px-3 py-1 rounded-full text-xs font-bold">
+                                            <i class="fa-solid fa-wand-magic-sparkles text-emerald-700"></i>
+                                            <span>好きな世界 #02</span>
+                                        </span>
+                                        <span class="text-xs font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full">
+                                            快適度 ★★★★★
+                                        </span>
+                                    </div>
+
+                                    <h3 class="text-xl sm:text-2xl font-black text-navy font-maru">転生したらスライムだった件（転スラ）</h3>
+                                    <p class="text-xs font-serif font-bold text-emerald-700 tracking-wider mb-3">That Time I Got Reincarnated as a Slime</p>
+
+                                    <p class="text-slate-800 text-sm sm:text-[15px] leading-relaxed">
+                                        魔国連邦（テンペスト）の快適な街づくりとワクワクする異世界ライフ。種族を超えてみんなが仲良く暮らし、温泉やグルメまで整備されている理想の観光＆移住先です。
+                                    </p>
+                                </div>
+
+                                <div class="px-6 pb-6">
+                                    <div class="bg-emerald-50 rounded-xl p-3.5 border border-emerald-200 text-xs sm:text-sm text-slate-800">
+                                        <span class="font-bold text-emerald-900 flex items-center gap-1.5 mb-1">
+                                            <i class="fa-solid fa-hot-tub-person text-emerald-700"></i>おすすめポイント：
+                                        </span>
+                                        テンペストの開国祭に参加して、絶品グルメと極上の温泉を満喫する癒やしの旅！
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- セクションB：おすすめしない世界（レッド警告テーマ・背景イラストなし） -->
+                    <section>
+                        <div class="flex items-center gap-2.5 mb-4">
+                            <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-red-600 text-white text-xs sm:text-sm font-bold shadow-sm">
+                                <i class="fa-solid fa-triangle-exclamation text-amber-200"></i>
+                                <span>DO NOT ENTER / おすすめしない世界（渡航注意）</span>
+                            </span>
+                            <div class="h-px flex-1 bg-red-300"></div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- おすすめしない世界 1：進撃の巨人 -->
+                            <div class="bg-white rounded-2xl border-2 border-red-500 shadow-md overflow-hidden flex flex-col justify-between">
+                                <div class="h-2.5 w-full hazard-stripe border-b border-red-400"></div>
+
+                                <div class="p-6">
+                                    <div class="flex items-center justify-between gap-2 mb-3">
+                                        <span class="inline-flex items-center gap-1.5 text-white bg-red-600 px-3 py-1 rounded-full text-xs font-bold shadow-sm">
+                                            <i class="fa-solid fa-ban"></i>
+                                            <span>DO NOT ENTER</span>
+                                        </span>
+                                        <span class="text-xs font-black text-red-700 bg-red-50 border border-red-300 px-2.5 py-0.5 rounded-full">
+                                            危険度 MAX
+                                        </span>
+                                    </div>
+
+                                    <h3 class="text-2xl font-black text-slate-900 font-maru">進撃の巨人</h3>
+                                    <p class="text-xs font-serif font-bold text-red-600 tracking-wider mb-3">Attack on Titan — 渡航注意エリア</p>
+
+                                    <p class="text-slate-800 text-sm sm:text-[15px] leading-relaxed">
+                                        壁の外も中も巨人の脅威が迫る、生存率極めて低めの過酷エリア。一般旅行者の観光には過酷すぎて、いつ壁が突破されるか分からず気が休まる暇が一切ありません。
+                                    </p>
+                                </div>
+
+                                <div class="px-6 pb-6">
+                                    <div class="bg-red-50/80 rounded-xl p-3.5 border border-red-200 text-xs sm:text-sm text-slate-800">
+                                        <span class="font-bold text-red-700 flex items-center gap-1.5 mb-1">
+                                            <i class="fa-solid fa-shield-halved"></i>渡航非推奨の理由：
+                                        </span>
+                                        立体機動装置の操作が無理ゲー＆壁外調査の生還率が絶望的なため（安全な自宅での鑑賞推奨）。
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- おすすめしない世界 2：名探偵コナン -->
+                            <div class="bg-white rounded-2xl border-2 border-red-500 shadow-md overflow-hidden flex flex-col justify-between">
+                                <div class="h-2.5 w-full hazard-stripe border-b border-red-400"></div>
+
+                                <div class="p-6">
+                                    <div class="flex items-center justify-between gap-2 mb-3">
+                                        <span class="inline-flex items-center gap-1.5 text-white bg-red-600 px-3 py-1 rounded-full text-xs font-bold shadow-sm">
+                                            <i class="fa-solid fa-triangle-exclamation text-amber-200"></i>
+                                            <span>渡航注意 / WARNING</span>
+                                        </span>
+                                        <span class="text-xs font-black text-red-700 bg-red-50 border border-red-300 px-2.5 py-0.5 rounded-full">
+                                            巻き込まれ危険度 MAX
+                                        </span>
+                                    </div>
+
+                                    <h3 class="text-2xl font-black text-slate-900 font-maru">名探偵コナン</h3>
+                                    <p class="text-xs font-serif font-bold text-red-600 tracking-wider mb-3">Detective Conan — 事件遭遇エリア</p>
+
+                                    <p class="text-slate-800 text-sm sm:text-[15px] leading-relaxed">
+                                        観光やイベントに行くだけで高確率で事件に巻き込まれる危険エリア。せっかくの楽しい旅行や豪華客船ツアーが、あっという間に密室事件の現場に早変わりします。
+                                    </p>
+                                </div>
+
+                                <div class="px-6 pb-6">
+                                    <div class="bg-red-50/80 rounded-xl p-3.5 border border-red-200 text-xs sm:text-sm text-slate-800">
+                                        <span class="font-bold text-red-700 flex items-center gap-1.5 mb-1">
+                                            <i class="fa-solid fa-user-secret"></i>渡航非推奨の理由：
+                                        </span>
+                                        米花町への宿泊や、メガネの少年・探偵一行と同じツアーに居合わせると容疑者候補になるため。
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+
+                <!-- 4. 応援スタンプ押下エリア ＆ HTMLコードコピーボタン -->
+                <div class="mt-10 pt-7 border-t-2 border-dashed border-amber-300 flex flex-col lg:flex-row items-center justify-between gap-5">
+                    
+                    <!-- 応援スタンプカウンター表示 -->
+                    <div class="flex items-center gap-4 text-center sm:text-left">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-100 border-2 border-amber-400 flex items-center justify-center text-amber-700 text-xl flex-shrink-0 shadow-sm">
+                            <i class="fa-solid fa-stamp"></i>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+                                <span class="text-sm font-black text-navy">拓斗の次の冒険（第13回）を応援！</span>
+                                <span id="stamp-badge" class="hidden px-2 py-0.5 rounded border-2 border-red-600 text-red-600 font-serif font-black text-[10px] tracking-widest bg-red-50">
+                                    BON VOYAGE!
+                                </span>
+                            </div>
+                            <p id="stamp-feedback" class="text-xs text-slate-600 mt-1">
+                                現在の応援スタンプ数：<span id="stamp-counter" class="font-black text-base text-amber-700">12</span> 個
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- アクションボタン群 -->
+                    <div class="flex flex-wrap items-center justify-center gap-3 w-full lg:w-auto">
+                        <button id="stamp-passport-btn" type="button" class="flex-1 sm:flex-initial justify-center px-5 py-3 rounded-xl bg-navy hover:bg-slate-800 text-amber-300 font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all active:scale-95 flex items-center gap-2">
+                            <i class="fa-solid fa-stamp"></i>
+                            <span>旅の応援スタンプを押す</span>
+                        </button>
+
+                        <button id="open-code-modal-btn" type="button" class="flex-1 sm:flex-initial justify-center px-4 py-3 rounded-xl bg-cream hover:bg-amber-100 text-navy border-2 border-amber-300 font-bold text-xs sm:text-sm transition-all active:scale-95 flex items-center gap-2">
+                            <i class="fa-solid fa-code text-amber-700"></i>
+                            <span>HTMLコードをコピー</span>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </article>
+
+        <!-- フッター -->
+        <footer class="text-center mt-6 text-xs text-slate-400">
+            © 架空世界旅行サークル (Fictional World Travel Club) — Traveler: Takuto
+        </footer>
+    </main>
+
+    <!-- HTMLコードコピー用モーダル -->
+    <div id="code-modal" class="fixed inset-0 z-50 hidden bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-2xl w-full shadow-2xl border-2 border-amber-400 overflow-hidden">
+            <div class="bg-navy text-white px-5 py-3.5 flex items-center justify-between border-b-2 border-gold">
+                <div class="flex items-center gap-2 text-sm font-bold text-amber-300">
+                    <i class="fa-solid fa-file-code"></i>
+                    <span>このページのHTMLソースコード</span>
+                </div>
+                <button id="close-modal-btn" type="button" class="text-slate-300 hover:text-white p-1">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <div class="p-5">
+                <p class="text-xs text-slate-600 mb-3">
+                    以下のコードをコピーして <code class="bg-slate-100 px-1.5 py-0.5 rounded font-mono text-navy">index.html</code> として保存し、同じフォルダに <code class="bg-slate-100 px-1.5 py-0.5 rounded font-mono text-navy">image_94d4a6.jpg</code> を置くとそのまま表示されます。
+                </p>
+                <textarea id="html-code-box" readonly="" class="w-full h-56 p-3 rounded-xl bg-slate-900 text-emerald-300 font-mono text-xs border border-slate-700 focus:outline-none resize-none"></textarea>
+                <div class="mt-4 flex items-center justify-between gap-3">
+                    <span id="copy-status" class="text-xs font-bold text-emerald-700 opacity-0 transition-opacity">
+                        <i class="fa-solid fa-check-circle mr-1"></i>クリップボードにコピーしました！
+                    </span>
+                    <button id="copy-code-btn" type="button" class="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-navy font-black text-xs shadow-sm transition-all flex items-center gap-2">
+                        <i class="fa-regular fa-copy"></i>
+                        <span>コードをコピーする</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. 画像読み込みエラー時のフォールバック＆ローカル画像選択/ドラッグ＆ドロッププレビュー対応
+            const memberPhoto = document.getElementById('member-photo');
+            const photoFileInput = document.getElementById('photo-file-input');
+            const photoDropZone = document.getElementById('photo-drop-zone');
+
+            const fallbackSvg = `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(`
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" width="800" height="360">
+                    <rect width="800" height="360" fill="#fcfaf5"/>
+                    <rect x="0" y="315" width="800" height="45" fill="#d4a373"/>
+                    <g fill="#fde68a" stroke="#1e293b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="95" y="95" width="24" height="120" rx="8"/>
+                        <circle cx="107" cy="85" r="16"/>
+                        <path d="M101 135 L113 147 M113 135 L101 147" stroke="#0f172a" stroke-width="3.5"/>
+                        <path d="M85 215 L129 215 L135 315 L79 315 Z" fill="#1e293b"/>
+                        
+                        <rect x="215" y="105" width="24" height="115" rx="8"/>
+                        <circle cx="227" cy="95" r="16"/>
+                        <path d="M221 142 L233 154 M233 142 L221 154" stroke="#0f172a" stroke-width="3.5"/>
+                        <path d="M205 220 L249 220 L255 315 L199 315 Z" fill="#78350f"/>
+
+                        <rect x="345" y="85" width="26" height="125" rx="9"/>
+                        <circle cx="358" cy="75" r="17"/>
+                        <path d="M351 128 L365 142 M365 128 L351 142" stroke="#0f172a" stroke-width="4"/>
+                        <path d="M332 210 L384 210 L392 315 L324 315 Z" fill="#bae6fd"/>
+                        <ellipse cx="378" cy="212" rx="26" ry="9" fill="#f59e0b"/>
+
+                        <rect x="475" y="100" width="22" height="115" rx="8"/>
+                        <circle cx="486" cy="90" r="15"/>
+                        <path d="M480 138 L492 150 M492 138 L480 150" stroke="#0f172a" stroke-width="3.5"/>
+                        <path d="M466 215 L506 215 L512 315 L460 315 Z" fill="#fef3c7"/>
+
+                        <rect x="590" y="92" width="24" height="120" rx="8"/>
+                        <circle cx="602" cy="82" r="16"/>
+                        <path d="M596 132 L608 144 M608 132 L596 144" stroke="#0f172a" stroke-width="3.5"/>
+                        <path d="M580 212 L624 212 L630 315 L574 315 Z" fill="#0f172a"/>
+
+                        <rect x="700" y="96" width="24" height="118" rx="8"/>
+                        <circle cx="712" cy="86" r="16"/>
+                        <path d="M706 134 L718 146 M718 134 L706 146" stroke="#0f172a" stroke-width="3.5"/>
+                        <path d="M690 214 L734 214 L740 315 L684 315 Z" fill="#334155"/>
+                    </g>
+                    <rect x="190" y="16" width="420" height="32" rx="16" fill="#121d36" opacity="0.92"/>
+                    <text x="400" y="37" font-family="sans-serif" font-size="12.5" font-weight="bold" fill="#fcd34d" text-anchor="middle">
+                        image_94d4a6.jpg（同フォルダ配置 または 右下の「画像を選択」で表示）
+                    </text>
+                </svg>
+            `)}`;
+
+            memberPhoto.addEventListener('error', () => {
+                if (memberPhoto.src !== fallbackSvg) {
+                    memberPhoto.src = fallbackSvg;
+                }
+            });
+
+            // ローカルファイル選択で即座にプレビュー表示する関数
+            function previewSelectedFile(file) {
+                if (!file || !file.type.startsWith('image/')) return;
+                const objectUrl = URL.createObjectURL(file);
+                memberPhoto.src = objectUrl;
+            }
+
+            photoFileInput.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                previewSelectedFile(file);
+            });
+
+            // ドラッグ＆ドロップ対応
+            photoDropZone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                photoDropZone.classList.add('border-amber-500', 'bg-amber-50');
+            });
+
+            photoDropZone.addEventListener('dragleave', () => {
+                photoDropZone.classList.remove('border-amber-500', 'bg-amber-50');
+            });
+
+            photoDropZone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                photoDropZone.classList.remove('border-amber-500', 'bg-amber-50');
+                const file = e.dataTransfer.files[0];
+                previewSelectedFile(file);
+            });
+
+            // 2. 活動回数12回分のトラベルスタンプアイコンを自動生成
+            const stampsGrid = document.getElementById('activity-stamps-grid');
+            const stampIcons = [
+                'fa-compass', 'fa-anchor', 'fa-dragon', 'fa-ship',
+                'fa-map', 'fa-hat-wizard', 'fa-mountain-sun', 'fa-crown',
+                'fa-scroll', 'fa-gem', 'fa-fire', 'fa-flag-checkered'
+            ];
+
+            for (let i = 1; i <= 12; i++) {
+                const badge = document.createElement('div');
+                badge.className = 'flex flex-col items-center justify-center p-2 rounded-xl bg-amber-50 border border-amber-300/90 text-navy hover:bg-amber-100 hover:scale-105 transition-all select-none';
+                badge.innerHTML = `
+                    <i class="fa-solid ${stampIcons[i - 1]} text-amber-600 text-xs sm:text-sm mb-1"></i>
+                    <span class="font-serif text-[10px] font-bold text-slate-700">#${String(i).padStart(2, '0')}</span>
+                `;
+                stampsGrid.appendChild(badge);
+            }
+
+            // 3. 旅の応援スタンプを押すインタラクション
+            const stampBtn = document.getElementById('stamp-passport-btn');
+            const stampFeedback = document.getElementById('stamp-feedback');
+            const stampBadge = document.getElementById('stamp-badge');
+            let stampCount = 12;
+
+            const messages = [
+                '仲間の印を掲げた！第13回の冒険も最高の旅になりますように！',
+                'テンペストの温泉で英気を養って、いざ未知の世界へ！',
+                '巨人エリアと米花町は回避して、安全第一で楽しもう！',
+                'パスポートに新しい渡航応援スタンプが刻まれました！'
+            ];
+
+            stampBtn.addEventListener('click', () => {
+                stampCount++;
+                const msg = messages[stampCount % messages.length];
+                stampFeedback.innerHTML = `<span class="font-bold text-emerald-700">${msg}</span>（計 <span class="font-black text-base text-navy">${stampCount}</span> 個）`;
+
+                stampBadge.classList.remove('hidden', 'animate-stamp-drop');
+                void stampBadge.offsetWidth;
+                stampBadge.classList.add('animate-stamp-drop');
+            });
+
+            // 4. HTMLコードコピー用モーダル処理（document.execCommand使用）
+            const modal = document.getElementById('code-modal');
+            const openModalBtn = document.getElementById('open-code-modal-btn');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            const codeBox = document.getElementById('html-code-box');
+            const copyBtn = document.getElementById('copy-code-btn');
+            const copyStatus = document.getElementById('copy-status');
+
+            openModalBtn.addEventListener('click', () => {
+                // コピー用ソースでは画像を常に image_94d4a6.jpg に戻して出力
+                const cloneDoc = document.documentElement.cloneNode(true);
+                const clonedImg = cloneDoc.querySelector('#member-photo');
+                if (clonedImg) {
+                    clonedImg.setAttribute('src', 'image_94d4a6.jpg');
+                }
+                const clonedModal = cloneDoc.querySelector('#code-modal');
+                if (clonedModal) {
+                    clonedModal.classList.add('hidden');
+                }
+                codeBox.value = '<!DOCTYPE html>\n' + cloneDoc.outerHTML;
+                modal.classList.remove('hidden');
+                copyStatus.classList.add('opacity-0');
+            });
+
+            closeModalBtn.addEventListener('click', () => {
+                modal.classList.add('hidden');
+            });
+
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.add('hidden');
+                }
+            });a
+
+            copyBtn.addEventListener('click', () => {
+                codeBox.select();
+
+                codeBox.setSelectionRange(0, 99999);
+                try {
+                    document.execCommand('copy');
+                    copyStatus.classList.remove('opacity-0');
+                } catch (err) {
+                    copyStatus.textContent = 'テキストを選択してコピーしてください。';
+                    copyStatus.classList.remove('opacity-0');
+                }
+            });
+        });
+    </script>
+
+</body></html>

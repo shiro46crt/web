@@ -1,0 +1,476 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>風の谷へ、旅に出よう。| Shiro's Travel Diary</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: #f5f2e7;
+  color: #465744;
+  font-family: 'Zen Maru Gothic', sans-serif;
+  line-height: 2;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 25px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  z-index: 5;
+}
+
+.logo {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 20px;
+  letter-spacing: 3px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 13px;
+}
+
+.hero {
+  min-height: 680px;
+  height: 95vh;
+  background:
+    linear-gradient(rgba(23,45,35,.2),rgba(23,45,35,.4)),
+    url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=2000')
+    center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-content { padding: 25px; }
+
+.hero small {
+  letter-spacing: 6px;
+}
+
+.hero h1 {
+  font-family: 'Shippori Mincho', serif;
+  font-size: clamp(36px, 6vw, 70px);
+  font-weight: 500;
+  letter-spacing: 7px;
+  margin: 25px 0;
+}
+
+.hero p { letter-spacing: 3px; }
+
+section { padding: 100px 10%; }
+
+.section-title {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.section-title small {
+  color: #a19b70;
+  letter-spacing: 4px;
+}
+
+.section-title h2 {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 32px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.intro {
+  max-width: 750px;
+  text-align: center;
+  margin: auto;
+}
+
+.intro p { margin-bottom: 20px; }
+
+.flower {
+  font-size: 30px;
+  color: #a4ad80;
+  margin-bottom: 20px;
+}
+
+.gallery { background: #e9ecdf; }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.gallery-item {
+  background: #f8f6ed;
+  padding: 12px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 310px;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-item p {
+  text-align: center;
+  padding: 15px 5px 5px;
+  font-family: 'Shippori Mincho', serif;
+}
+
+.caption {
+  color: #898e75;
+  font-size: 12px;
+  text-align: center;
+}
+
+.story {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+.story img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  margin: 35px 0;
+}
+
+.profile {
+  background: #e6e9dc;
+  text-align: center;
+}
+
+.profile-card {
+  max-width: 650px;
+  margin: auto;
+  padding: 40px;
+  background: #f9f7ee;
+}
+
+.profile-icon {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.profile h3 {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+
+.previous {
+  border-top: 1px solid #d5d9c9;
+  margin-top: 35px;
+  padding-top: 30px;
+}
+
+.previous img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  margin: 15px 0;
+}
+
+.invitation {
+  background: #718467;
+  text-align: center;
+  color: #fffdf1;
+}
+
+.invitation h2 {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 35px;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+.invitation p { margin-bottom: 25px; }
+
+.button {
+  display: inline-block;
+  padding: 12px 35px;
+  color: white;
+  border: 1px solid white;
+  text-decoration: none;
+  transition: .3s;
+}
+
+.button:hover {
+  background: white;
+  color: #718467;
+}
+
+footer {
+  padding: 35px;
+  text-align: center;
+  color: #8b907d;
+  font-size: 12px;
+}
+
+@media(max-width:650px) {
+  header {
+    padding: 15px 5%;
+    flex-wrap: wrap;
+  }
+
+  .logo { font-size: 16px; }
+
+  nav a {
+    margin-left: 8px;
+    font-size: 10px;
+  }
+
+  .hero { min-height: 550px; }
+
+  section { padding: 70px 7%; }
+
+  .gallery-grid { grid-template-columns: 1fr; }
+
+  .gallery-item img { height: 250px; }
+
+  .profile-card { padding: 25px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Shiro's Travel Diary</div>
+  <nav>
+    <a href="#about">旅について</a>
+    <a href="#gallery">旅の写真</a>
+    <a href="#profile">自己紹介</a>
+  </nav>
+</header>
+
+<!-- メインビジュアル -->
+<div class="hero">
+  <div class="hero-content">
+    <small>A JOURNEY INTO A DREAM</small>
+    <h1>風の谷へ、旅に出よう。</h1>
+    <p>風と緑に包まれた、私たちの冒険。</p>
+  </div>
+</div>
+
+<!-- 旅の紹介 -->
+<section id="about">
+  <div class="section-title">
+    <small>ABOUT OUR JOURNEY</small>
+    <h2>風が運んでくれた、特別な旅</h2>
+  </div>
+
+  <div class="intro">
+    <div class="flower">✿</div>
+    <p>こんにちは、Shiroです。</p>
+
+    <p>
+      今回、私たちサークル仲間は、
+      ずっと憧れていた「風の谷のナウシカ」の世界を
+      イメージした旅へ出かけてきました。
+    </p>
+
+    <p>
+      どこまでも広がる草原、青く神秘的な森、
+      そして大空を自由に飛んでいくような気持ち。
+    </p>
+
+    <p>
+      まるで映画の世界に入り込んだような、
+      忘れられない時間を過ごすことができました。
+    </p>
+
+    <p>
+      今回は、そんな旅の思い出を
+      皆さんにもお届けします。
+    </p>
+  </div>
+</section>
+
+<!-- 写真ギャラリー -->
+<section class="gallery" id="gallery">
+
+  <div class="section-title">
+    <small>OUR MEMORIES</small>
+    <h2>風の谷で出会った景色</h2>
+  </div>
+
+  <div class="gallery-grid">
+
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1000"
+      alt="山々に囲まれた美しい谷">
+      <p>風が吹き抜ける、緑の谷</p>
+      <div class="caption">THE VALLEY OF THE WIND</div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?w=1000"
+      alt="青空と広大な風景">
+      <p>空を飛びたくなるような青空</p>
+      <div class="caption">FLYING IN THE SKY</div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1000"
+      alt="深い緑の神秘的な森">
+      <p>不思議な植物が息づく、神秘の森</p>
+      <div class="caption">MYSTERIOUS FOREST</div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?w=1000"
+      alt="草原にたたずむ野生動物">
+      <p>大地に生きる、不思議な生き物たち</p>
+      <div class="caption">LIFE OF THE EARTH</div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1000"
+      alt="広がる草原と山">
+      <p>どこまでも続く黄金色の大地</p>
+      <div class="caption">GOLDEN GRASSLAND</div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1000"
+      alt="夕日に染まる草原">
+      <p>旅の終わりを彩る、美しい夕焼け</p>
+      <div class="caption">A BEAUTIFUL EVENING</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 旅の感想 -->
+<section>
+  <div class="section-title">
+    <small>TRAVEL DIARY</small>
+    <h2>心に残ったこと</h2>
+  </div>
+
+  <div class="story">
+    <p>
+      今回の旅で一番印象に残ったのは、
+      自然の美しさと、その中で過ごす穏やかな時間でした。
+    </p>
+
+    <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1200"
+    alt="美しい山と湖">
+
+    <p>
+      仲間たちと景色を眺めたり、
+      写真を撮ったり、何気ない会話をしたり。
+    </p>
+
+    <p>
+      一人で見る景色も素敵だけれど、
+      大好きな仲間と一緒に見る景色は、
+      もっと特別なものになるんだなと感じました。
+    </p>
+  </div>
+</section>
+
+<!-- 自己紹介 -->
+<section class="profile" id="profile">
+
+  <div class="section-title">
+    <small>ABOUT ME</small>
+    <h2>ちょっとだけ自己紹介</h2>
+  </div>
+
+  <div class="profile-card">
+
+    <img class="profile-icon"
+    src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=400"
+    alt="プロフィール写真">
+
+    <h3>はじめまして、Shiroです。</h3>
+
+    <p>
+      ジブリ作品が大好きで、
+      作品の世界に入り込むような旅行を楽しんでいます。
+    </p>
+
+    <p>
+      美しい自然や、映画に登場するような景色を見つけると、
+      ついつい写真を撮りたくなってしまいます。
+    </p>
+
+    <div class="previous">
+      <small>MY PREVIOUS ADVENTURE</small>
+      <h3>前回は「もののけ姫」の世界へ！</h3>
+
+      <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000"
+      alt="深い緑の森">
+
+      <p>
+        前回は「もののけ姫」の世界をイメージした旅へ。
+      </p>
+
+      <p>
+        神秘的な森に包まれて、
+        自然の力強さを感じる素敵な旅行でした。
+      </p>
+
+      <p>
+        今回のナウシカの旅も、
+        また違った魅力がいっぱいでした！
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- お誘い -->
+<section class="invitation">
+
+  <h2>皆さんも、行ってみませんか？</h2>
+
+  <p>
+    映画の中で見たあの景色を、
+    いつか自分の目で見てみたい。<br>
+    そんな小さな憧れを、旅にしてみませんか？
+  </p>
+
+  <p>
+    次はどんなジブリの世界へ行こうかな。<br>
+    皆さんと一緒に、新しい冒険ができたら嬉しいです。
+  </p>
+
+  <a href="#about" class="button">旅の思い出をもう一度読む</a>
+
+</section>
+
+<footer>
+  <p>© 2026 Shiro's Travel Diary</p>
+  <p>風と緑に包まれた、私たちの小さな冒険。</p>
+</footer>
+
+</body>
+</html>
